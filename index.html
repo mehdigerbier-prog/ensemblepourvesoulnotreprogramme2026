@@ -1,0 +1,3085 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ensemble Pour Vesoul — Le projet d'une ville qui se relève</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #1a3a6b;
+    --blue-mid: #2255a0;
+    --blue-light: #4a80d4;
+    --sky: #e8f0fc;
+    --gold: #f0a500;
+    --white: #ffffff;
+    --off-white: #f7f9ff;
+    --text: #1a2333;
+    --text-muted: #5a6a80;
+    --radius: 16px;
+    --shadow: 0 4px 32px rgba(26,58,107,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'Sora', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 24px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(26,58,107,0.08);
+    transition: all 0.3s;
+  }
+  .nav-logo {
+    font-size: 0.85rem; font-weight: 700; color: var(--blue);
+    letter-spacing: 0.05em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links {
+    display: flex; gap: 24px;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none; color: var(--text-muted);
+    font-size: 0.82rem; font-weight: 600;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-cta {
+    background: var(--blue); color: white;
+    padding: 9px 20px; border-radius: 50px;
+    font-size: 0.82rem; font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--blue-mid); transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/wAARCAKwA9wDASIAAhEBAxEB/8QAHQAAAgIDAQEBAAAAAAAAAAAAAwQCBQABBgcICf/EAFYQAAEEAQIEAwUDBwcHCgYABwEAAgMRBCExBRJBUQYiYQcTMnGBFJGhI0JSpLHB4ggVRWKE0eMWFzNGpeHwJCU1VVZmcoKi8TQ2Q2SSwrImY3ODhdL/xAAbAQADAQEBAQEAAAAAAAAAAAABAgMABAUGB//EADQRAAICAQMCAgkEAgMAAwAAAAABAhEDBBIhBTETQQYUIjJRUlOi0RahsdJCYSNDcRU0wf/aAAwDAQACEQMRAD8A9K/zBj/tZ/s7/EUv8wX/AHs/2d/ir2tZZ7r6L9V9W+r9sfwdPrmb4/weKf5gv+9n+zv8VR/zB61/lZ/s7/EXtwJUSdUr9LOr/V+2P4N65m+P8Hif+YP/AL2f7O/xFsewMH/Wz/Z3+IvbG7LbVl6WdX+r9sfwH1zN8f4PE/8AMF/3s/2d/irP8wX/AHs/2d/ir21Yj+q+rfV+2P4MtZm+P8HiX+YL/vZ/s7/FWf5gv+9n+zv8Ve3LEf1X1b6v2x/BvW83x/g8R/zBf97P9nf4qz/MD/3t/wBnf4q9uWwt+q+rfV+2P4N63m+P8HiH+YH/AL2/7O/xVjvYFQv/ACs/2d/ir29Rf8KH6r6t9X7Y/g3rmb4/weFyewnkF/5VX/8A6/8AxErJ7FQz/Wa/7D/iL3PI+FVkotxXPP0v6wu2b7Y/1LQ1OR92eOf5mP8AvL+o/wCItP8AYzyi/wDKS/7D/iL2IV1QpqDSov0x619b7Y/1KrPP4ni8vsl5DX+UF/2P+NBk9loZ/T36n/GvWMuuZJTAFD9Zda+t9sf6m8efxPLnezRrTX8+X/ZP40N3s5a3+m7/ALL/ABr0bJby2Uk5MvTHrP1vtj/UT1jJ8ThJPArGf0vf9m/iWmeBmu/pav7N/Eu1mZZ2WQSP') center right / cover no-repeat;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: flex-start;
+    padding: 120px 6vw 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(105deg, rgba(10,25,60,0.92) 0%, rgba(15,35,80,0.85) 45%, rgba(20,50,100,0.45) 70%, rgba(10,25,60,0.15) 100%);
+  }
+  .hero-eyebrow {
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 20px;
+    opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero h1 {
+    font-size: clamp(2.6rem, 8vw, 5.5rem);
+    font-weight: 800; color: white; line-height: 1.08;
+    max-width: 700px;
+    opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+  }
+  .hero h1 em {
+    font-style: normal;
+    background: linear-gradient(90deg, #f0a500, #ffd166);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    margin-top: 24px;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: rgba(255,255,255,0.75);
+    max-width: 520px; line-height: 1.6;
+    font-family: 'Lora', serif;
+    opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
+  }
+  .hero-cta {
+    margin-top: 40px;
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--gold); color: var(--blue);
+    padding: 16px 32px; border-radius: 50px;
+    font-weight: 700; font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+    box-shadow: 0 8px 32px rgba(240,165,0,0.35);
+  }
+  .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(240,165,0,0.5); }
+  .hero-cta svg { width: 20px; height: 20px; }
+
+  .hero-pills {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-top: 40px;
+    opacity: 0; animation: fadeUp 0.8s 1s forwards;
+  }
+  .pill {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white; font-size: 0.78rem; font-weight: 600;
+    padding: 6px 14px; border-radius: 50px;
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-scroll {
+    position: absolute; bottom: 32px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    color: rgba(255,255,255,0.5); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    animation: pulse 2s infinite;
+  }
+  .hero-scroll::after {
+    content: '';
+    display: block; width: 1px; height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+    margin-top: 4px;
+  }
+
+  /* SECTIONS */
+  section { padding: 80px 6vw; }
+
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--blue-light);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800; color: var(--blue); line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem; color: var(--text-muted);
+    line-height: 1.7; max-width: 620px;
+  }
+
+  /* REVEAL ANIMATION */
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* CONSTAT SECTION */
+  .constat {
+    background: var(--off-white);
+    position: relative;
+  }
+  .constat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; margin-top: 48px;
+  }
+  .constat-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 28px;
+    border-left: 4px solid var(--blue-light);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+  }
+  .constat-card:hover { transform: translateY(-4px); }
+  .constat-card .emoji { font-size: 2rem; margin-bottom: 12px; display: block; }
+  .constat-card p {
+    font-size: 1rem; color: var(--text); line-height: 1.6;
+    font-family: 'Lora', serif; font-style: italic;
+  }
+  .constat-card small { display: block; margin-top: 8px; color: var(--text-muted); font-size: 0.8rem; font-style: normal; font-family: 'Sora'; }
+
+  /* VISION */
+  .vision {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+    color: white;
+    position: relative; overflow: hidden;
+  }
+  .vision::before {
+    content: '';
+    position: absolute; top: -50%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(74,128,212,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .vision .section-label { color: var(--gold); }
+  .vision .section-title { color: white; }
+  .vision .section-sub { color: rgba(255,255,255,0.75); }
+  .vision-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; margin-top: 48px;
+  }
+  .vision-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius);
+    padding: 28px;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s, transform 0.3s;
+  }
+  .vision-card:hover {
+    background: rgba(255,255,255,0.14);
+    transform: translateY(-4px);
+  }
+  .vision-card .icon { font-size: 2rem; margin-bottom: 16px; }
+  .vision-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+  .vision-card p { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+  /* PROGRAMME INTERACTIF */
+  .programme { background: var(--off-white); }
+  .programme-tabs {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin: 32px 0 40px;
+  }
+  .tab-btn {
+    display: flex; align-items: center; gap: 8px;
+    background: white; border: 2px solid rgba(26,58,107,0.12);
+    border-radius: 50px; padding: 10px 20px;
+    font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600;
+    color: var(--text-muted); cursor: pointer;
+    transition: all 0.25s;
+  }
+  .tab-btn:hover, .tab-btn.active {
+    background: var(--blue); color: white;
+    border-color: var(--blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26,58,107,0.2);
+  }
+  .tab-content { display: none; }
+  .tab-content.active { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .measure-card {
+    background: white; border-radius: var(--radius);
+    padding: 24px; box-shadow: var(--shadow);
+    display: flex; gap: 16px; align-items: flex-start;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .measure-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,58,107,0.15); }
+  .measure-icon {
+    width: 48px; height: 48px; flex-shrink: 0;
+    background: var(--sky); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+  }
+  .measure-body h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; color: var(--blue); }
+  .measure-body p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+  .measure-tag {
+    display: inline-block; margin-top: 10px;
+    background: var(--sky); color: var(--blue-mid);
+    font-size: 0.72rem; font-weight: 700;
+    padding: 3px 10px; border-radius: 50px;
+    letter-spacing: 0.05em;
+  }
+
+  /* MESURES PHARES */
+  .phares { background: white; }
+  .phares-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-top: 48px;
+  }
+  .phare-card {
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    background: var(--off-white);
+    border-top: 4px solid var(--blue-light);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: default;
+  }
+  .phare-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+    border-top-color: var(--gold);
+  }
+  .phare-num {
+    font-size: 2.5rem; font-weight: 800; color: var(--blue);
+    line-height: 1;
+  }
+  .phare-card h3 { font-size: 1rem; font-weight: 700; margin: 12px 0 8px; color: var(--blue); }
+  .phare-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* SIMULATEUR */
+  .simulateur { background: var(--sky); }
+  .profiles {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 16px; margin: 32px 0;
+  }
+  .profile-btn {
+    background: white; border: 2px solid rgba(26,58,107,0.12);
+    border-radius: var(--radius); padding: 20px 16px;
+    text-align: center; cursor: pointer;
+    transition: all 0.25s;
+    font-family: 'Sora', sans-serif;
+  }
+  .profile-btn:hover, .profile-btn.active {
+    background: var(--blue); border-color: var(--blue);
+    color: white; transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(26,58,107,0.25);
+  }
+  .profile-btn .p-icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+  .profile-btn .p-label { font-size: 0.85rem; font-weight: 700; }
+  .profile-result {
+    background: white; border-radius: var(--radius);
+    padding: 32px; box-shadow: var(--shadow);
+    display: none;
+    animation: fadeUp 0.5s forwards;
+  }
+  .profile-result.show { display: block; }
+  .profile-result h3 {
+    font-size: 1.3rem; font-weight: 700; color: var(--blue);
+    margin-bottom: 20px;
+  }
+  .result-items { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .result-item {
+    display: flex; gap: 12px; align-items: flex-start;
+    background: var(--sky); border-radius: 12px; padding: 16px;
+  }
+  .result-item .ri-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .result-item p { font-size: 0.88rem; line-height: 1.5; color: var(--text); }
+  .result-item strong { display: block; font-weight: 700; margin-bottom: 2px; color: var(--blue); }
+
+  /* TRANSPARENCE */
+  .transparence { background: white; }
+  .trans-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-top: 48px;
+  }
+  .trans-card {
+    text-align: center; padding: 32px 20px;
+  }
+  .trans-icon {
+    width: 64px; height: 64px;
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; margin: 0 auto 20px;
+  }
+  .trans-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--blue); }
+  .trans-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* MINI JEU */
+  .minijeu {
+    background: linear-gradient(135deg, #0d2145 0%, #1a3a6b 100%);
+    color: white; text-align: center;
+  }
+  .minijeu .section-title { color: white; }
+  .minijeu .section-sub { color: rgba(255,255,255,0.7); margin: 0 auto 40px; }
+  .quiz-container {
+    max-width: 680px; margin: 0 auto;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px; padding: 40px 32px;
+    backdrop-filter: blur(12px);
+  }
+  .quiz-step { display: none; }
+  .quiz-step.active { display: block; animation: fadeUp 0.5s forwards; }
+  .quiz-question {
+    font-size: 1.2rem; font-weight: 700; margin-bottom: 28px;
+    color: white; line-height: 1.4;
+  }
+  .quiz-options { display: flex; flex-direction: column; gap: 12px; }
+  .quiz-opt {
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 12px; padding: 14px 20px;
+    font-family: 'Sora'; font-size: 0.9rem; font-weight: 600;
+    color: white; cursor: pointer; text-align: left;
+    transition: all 0.2s;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .quiz-opt:hover {
+    background: rgba(255,255,255,0.16);
+    border-color: var(--gold);
+    transform: translateX(6px);
+  }
+  .quiz-opt.selected {
+    background: var(--gold); color: var(--blue);
+    border-color: var(--gold);
+  }
+  .quiz-opt .opt-emoji { font-size: 1.4rem; }
+  .quiz-progress {
+    display: flex; gap: 8px; justify-content: center; margin-bottom: 32px;
+  }
+  .prog-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    transition: background 0.3s;
+  }
+  .prog-dot.done { background: var(--gold); }
+  .quiz-result { display: none; }
+  .quiz-result.show { display: block; animation: fadeUp 0.6s forwards; }
+  .quiz-result .profile-badge {
+    font-size: 4rem; margin-bottom: 16px;
+  }
+  .quiz-result .profile-title {
+    font-size: 1.6rem; font-weight: 800; margin-bottom: 12px; color: var(--gold);
+  }
+  .quiz-result .profile-desc {
+    font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.7;
+    margin-bottom: 24px; font-family: 'Lora', serif; font-style: italic;
+  }
+  .quiz-measures {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    text-align: left; margin-top: 20px;
+  }
+  .qm-item {
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 12px 16px;
+    font-size: 0.82rem; font-weight: 600; color: white;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .qm-item .qm-icon { font-size: 1.2rem; flex-shrink: 0; }
+  .quiz-restart {
+    margin-top: 24px;
+    background: var(--gold); color: var(--blue);
+    border: none; border-radius: 50px; padding: 12px 28px;
+    font-family: 'Sora'; font-size: 0.9rem; font-weight: 700;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .quiz-restart:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(240,165,0,0.4); }
+
+  /* CTA FINAL */
+  .cta-final {
+    background: var(--gold);
+    text-align: center; padding: 80px 6vw;
+  }
+  .cta-final h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800; color: var(--blue); margin-bottom: 16px;
+  }
+  .cta-final p {
+    font-size: 1.1rem; color: rgba(26,58,107,0.75);
+    margin-bottom: 32px; font-family: 'Lora', serif;
+  }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--blue); color: white;
+    padding: 18px 40px; border-radius: 50px;
+    font-size: 1rem; font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 8px 32px rgba(26,58,107,0.3);
+  }
+  .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 48px rgba(26,58,107,0.4); }
+
+  /* FOOTER */
+  footer {
+    background: var(--blue); color: rgba(255,255,255,0.6);
+    text-align: center; padding: 32px 6vw;
+    font-size: 0.82rem; line-height: 1.8;
+  }
+  footer strong { color: white; }
+
+
+  /* ═══════════════════════════════════════
+     COMPTE À REBOURS
+  ═══════════════════════════════════════ */
+  .countdown-section {
+    background: linear-gradient(135deg, #0d1e42 0%, #1a3a6b 60%, #1e4d8c 100%);
+    color: white; text-align: center;
+    padding: 70px 6vw;
+    position: relative; overflow: hidden;
+  }
+  .countdown-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(240,165,0,0.12) 0%, transparent 70%);
+  }
+  .countdown-section .section-label { color: var(--gold); }
+  .countdown-section .section-title { color: white; }
+  .countdown-display {
+    display: flex; justify-content: center; align-items: center;
+    gap: 8px; margin: 40px auto;
+    flex-wrap: wrap;
+  }
+  .cd-block {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px; padding: 20px 28px;
+    min-width: 90px; backdrop-filter: blur(8px);
+    transition: transform 0.1s;
+  }
+  .cd-num {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 800; color: var(--gold);
+    line-height: 1; font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+  .cd-label {
+    font-size: 0.72rem; text-transform: uppercase;
+    letter-spacing: 0.14em; color: rgba(255,255,255,0.55);
+    margin-top: 6px; font-weight: 600;
+  }
+  .cd-sep {
+    font-size: 2.5rem; font-weight: 800; color: var(--gold);
+    opacity: 0.5; align-self: flex-start; padding-top: 16px;
+    animation: pulse 1s infinite;
+  }
+  .cd-expired { animation: fadeUp 0.8s forwards; }
+  .cd-expired-text {
+    font-size: 1.5rem; font-weight: 700; color: var(--gold);
+    padding: 32px; border: 2px solid var(--gold);
+    border-radius: var(--radius); display: inline-block;
+  }
+  .cd-subtitle { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 28px; }
+  .cd-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+  .cd-btn-primary {
+    background: var(--gold); color: var(--blue);
+    padding: 14px 32px; border-radius: 50px;
+    font-weight: 700; font-size: 0.95rem;
+    text-decoration: none; transition: all 0.2s;
+    box-shadow: 0 6px 24px rgba(240,165,0,0.35);
+  }
+  .cd-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(240,165,0,0.5); }
+  .cd-btn-secondary {
+    background: transparent; color: white;
+    border: 2px solid rgba(255,255,255,0.35);
+    padding: 14px 32px; border-radius: 50px;
+    font-weight: 700; font-size: 0.95rem; cursor: pointer;
+    font-family: 'Sora', sans-serif;
+    transition: all 0.2s;
+  }
+  .cd-btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* VOTER GUIDE */
+  .voter-guide {
+    margin-top: 56px; border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 40px;
+  }
+  .vg-title {
+    font-size: 1rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--gold); margin-bottom: 28px;
+  }
+  .vg-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .vg-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px; padding: 24px 20px;
+    text-align: left; transition: all 0.25s;
+  }
+  .vg-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
+  .vg-icon { font-size: 1.8rem; margin-bottom: 12px; }
+  .vg-card h4 { font-size: 1rem; font-weight: 700; color: white; margin-bottom: 8px; }
+  .vg-card p { font-size: 0.83rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .vg-link {
+    display: inline-block; margin-top: 12px;
+    color: var(--gold); font-size: 0.83rem; font-weight: 700;
+    text-decoration: none; transition: gap 0.2s;
+  }
+  .vg-link:hover { text-decoration: underline; }
+
+  /* ═══════════════════════════════════════
+     MODAL
+  ═══════════════════════════════════════ */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(0,0,0,0.65); backdrop-filter: blur(6px);
+    display: none; align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: white; border-radius: 24px;
+    padding: 40px 36px; max-width: 440px; width: 100%;
+    position: relative; text-align: center;
+    animation: fadeUp 0.4s forwards;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.3);
+  }
+  .modal-close {
+    position: absolute; top: 16px; right: 20px;
+    background: none; border: none; font-size: 1.2rem;
+    cursor: pointer; color: var(--text-muted);
+    width: 32px; height: 32px;
+  }
+  .modal-icon { font-size: 2.8rem; margin-bottom: 16px; }
+  .modal-box h3 { font-size: 1.3rem; font-weight: 800; color: var(--blue); margin-bottom: 10px; }
+  .modal-box p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
+  .modal-input {
+    width: 100%; border: 2px solid rgba(26,58,107,0.18);
+    border-radius: 12px; padding: 14px 18px;
+    font-size: 1rem; font-family: 'Sora', sans-serif;
+    margin-bottom: 14px; outline: none;
+    transition: border-color 0.2s;
+  }
+  .modal-input:focus { border-color: var(--blue); }
+  .modal-submit {
+    width: 100%; background: var(--blue); color: white;
+    border: none; border-radius: 50px; padding: 15px;
+    font-size: 1rem; font-weight: 700; cursor: pointer;
+    font-family: 'Sora', sans-serif; transition: all 0.2s;
+  }
+  .modal-submit:hover { background: var(--blue-mid); transform: translateY(-1px); }
+  .modal-note { font-size: 0.75rem; color: var(--text-muted); margin-top: 14px; }
+  .modal-confirm { color: #2d7a2d; font-weight: 700; margin-top: 16px; font-size: 0.95rem; }
+
+  /* ═══════════════════════════════════════
+     SIMULATEUR ENRICHI
+  ═══════════════════════════════════════ */
+  .result-item span { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; display: block; margin-top: 3px; }
+  .sim-email-block {
+    margin-top: 28px; padding: 20px 24px;
+    background: var(--sky); border-radius: 14px;
+    border-left: 4px solid var(--blue);
+  }
+  .sim-email-block p { font-size: 0.9rem; font-weight: 600; color: var(--blue); margin-bottom: 10px; }
+  .sim-email-row { display: flex; gap: 10px; }
+  .sim-email {
+    flex: 1; border: 1px solid rgba(26,58,107,0.2);
+    border-radius: 10px; padding: 10px 14px;
+    font-size: 0.9rem; font-family: 'Sora', sans-serif; outline: none;
+  }
+  .sim-email:focus { border-color: var(--blue); }
+  .sim-email-row button {
+    background: var(--blue); color: white; border: none;
+    border-radius: 10px; padding: 10px 20px;
+    font-weight: 700; font-size: 0.85rem; cursor: pointer;
+    font-family: 'Sora', sans-serif; white-space: nowrap;
+  }
+  .sim-email-block small { font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 8px; }
+  .sim-confirm { color: #2d7a2d; font-weight: 700; font-size: 0.85rem; margin-top: 8px; display: none; }
+
+  /* ═══════════════════════════════════════
+     CARTE INTERACTIVE
+  ═══════════════════════════════════════ */
+  .carte-section {
+    background: white; padding: 80px 6vw;
+  }
+  .carte-wrapper {
+    display: grid; grid-template-columns: 1fr 380px;
+    gap: 32px; margin-top: 40px; align-items: start;
+  }
+  .carte-svg-container {
+    background: var(--sky); border-radius: 20px;
+    padding: 24px; position: relative;
+    min-height: 420px; display: flex; align-items: center; justify-content: center;
+  }
+  .carte-svg { width: 100%; height: auto; max-height: 480px; }
+  .quartier-zone {
+    fill: rgba(26,58,107,0.1);
+    stroke: var(--blue); stroke-width: 1.5;
+    cursor: pointer; transition: fill 0.2s;
+  }
+  .quartier-zone:hover, .quartier-zone.active { fill: rgba(26,58,107,0.25); }
+  .quartier-zone.selected { fill: rgba(240,165,0,0.3); stroke: var(--gold); stroke-width: 2.5; }
+  .quartier-label {
+    font-family: 'Sora', sans-serif; font-size: 11px;
+    font-weight: 700; fill: var(--blue); pointer-events: none;
+    text-anchor: middle;
+  }
+  .carte-instruction {
+    text-align: center; font-size: 0.85rem; color: var(--text-muted);
+    margin-top: 12px; font-style: italic;
+  }
+  .carte-panel {
+    background: white; border: 1px solid rgba(26,58,107,0.1);
+    border-radius: 20px; padding: 28px;
+    box-shadow: var(--shadow);
+    position: sticky; top: 90px;
+    min-height: 300px;
+  }
+  .carte-panel-empty {
+    text-align: center; padding: 40px 20px; color: var(--text-muted);
+  }
+  .carte-panel-empty .cp-icon { font-size: 3rem; margin-bottom: 16px; }
+  .carte-panel-empty p { font-size: 0.9rem; line-height: 1.6; }
+  .carte-panel-content { display: none; }
+  .carte-panel-content.show { display: block; animation: fadeUp 0.4s forwards; }
+  .cp-quartier-name {
+    font-size: 1.2rem; font-weight: 800; color: var(--blue);
+    margin-bottom: 4px;
+  }
+  .cp-subtitle {
+    font-size: 0.8rem; color: var(--gold); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px;
+  }
+  .cp-measures { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  .cp-measure {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 14px; border-radius: 10px;
+    background: var(--sky); border-left: 3px solid var(--blue-light);
+  }
+  .cp-micon { font-size: 1.2rem; flex-shrink: 0; }
+  .cp-mtext { font-size: 0.85rem; color: var(--text); line-height: 1.45; }
+  .cp-mtext strong { display: block; font-weight: 700; color: var(--blue); font-size: 0.83rem; }
+  .cp-signal-btn {
+    width: 100%; background: var(--blue); color: white;
+    border: none; border-radius: 12px; padding: 14px 20px;
+    font-weight: 700; font-size: 0.9rem; cursor: pointer;
+    font-family: 'Sora', sans-serif; transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .cp-signal-btn:hover { background: var(--blue-mid); transform: translateY(-1px); }
+  .cp-signal-form { display: none; margin-top: 16px; }
+  .cp-signal-form.show { display: block; animation: fadeUp 0.3s forwards; }
+  .cp-signal-form select, .cp-signal-form textarea {
+    width: 100%; border: 1px solid rgba(26,58,107,0.2);
+    border-radius: 10px; padding: 12px 14px;
+    font-family: 'Sora', sans-serif; font-size: 0.88rem;
+    margin-bottom: 10px; outline: none;
+  }
+  .cp-signal-form select:focus, .cp-signal-form textarea:focus { border-color: var(--blue); }
+  .cp-signal-form textarea { min-height: 80px; resize: vertical; }
+  .cp-signal-submit {
+    width: 100%; background: var(--gold); color: var(--blue);
+    border: none; border-radius: 10px; padding: 12px;
+    font-weight: 800; font-size: 0.9rem; cursor: pointer;
+    font-family: 'Sora', sans-serif; transition: all 0.2s;
+  }
+  .cp-signal-submit:hover { transform: translateY(-1px); }
+  .cp-signal-confirm { color: #2d7a2d; font-weight: 700; font-size: 0.85rem; text-align: center; margin-top: 10px; display: none; }
+
+  /* ═══════════════════════════════════════
+     MOBILE — nouveaux modules
+  ═══════════════════════════════════════ */
+  @media (max-width: 900px) {
+    .carte-wrapper { grid-template-columns: 1fr; }
+    .carte-panel { position: static; }
+    .vg-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .cd-block { padding: 14px 18px; min-width: 70px; }
+    .cd-num { font-size: 2rem; }
+    .cd-sep { font-size: 1.8rem; }
+    .vg-grid { grid-template-columns: 1fr; }
+    .sim-email-row { flex-direction: column; }
+    .profiles { grid-template-columns: repeat(2, 1fr); }
+  }
+
+
+  /* COMPTE A REBOURS */
+  .countdown-section {
+    background: linear-gradient(135deg, #0d1e42 0%, #1a3a6b 60%, #1e4d8c 100%);
+    color: white; text-align: center; padding: 70px 6vw; position: relative; overflow: hidden;
+  }
+  .countdown-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(240,165,0,0.12) 0%, transparent 70%);
+  }
+  .countdown-section .section-label { color: var(--gold); }
+  .countdown-section .section-title { color: white; }
+  .countdown-display {
+    display: flex; justify-content: center; align-items: center;
+    gap: 8px; margin: 40px auto; flex-wrap: wrap;
+  }
+  .cd-block {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px; padding: 20px 28px; min-width: 90px; backdrop-filter: blur(8px);
+  }
+  .cd-num {
+    font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 800; color: var(--gold);
+    line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.02em;
+  }
+  .cd-label {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.55); margin-top: 6px; font-weight: 600;
+  }
+  .cd-sep { font-size: 2.5rem; font-weight: 800; color: var(--gold); opacity: 0.5; align-self: flex-start; padding-top: 16px; animation: pulse 1s infinite; }
+  .cd-expired { animation: fadeUp 0.8s forwards; }
+  .cd-expired-text { font-size: 1.5rem; font-weight: 700; color: var(--gold); padding: 32px; border: 2px solid var(--gold); border-radius: var(--radius); display: inline-block; }
+  .cd-subtitle { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 28px; }
+  .cd-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+  .cd-btn-primary { background: var(--gold); color: var(--blue); padding: 14px 32px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; box-shadow: 0 6px 24px rgba(240,165,0,0.35); }
+  .cd-btn-primary:hover { transform: translateY(-2px); }
+  .cd-btn-secondary { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.35); padding: 14px 32px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; cursor: pointer; font-family: 'Sora', sans-serif; transition: all 0.2s; }
+  .cd-btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+  .voter-guide { margin-top: 56px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; }
+  .vg-title { font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 28px; }
+  .vg-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .vg-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px 20px; text-align: left; transition: all 0.25s; }
+  .vg-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
+  .vg-icon { font-size: 1.8rem; margin-bottom: 12px; }
+  .vg-card h4 { font-size: 1rem; font-weight: 700; color: white; margin-bottom: 8px; }
+  .vg-card p { font-size: 0.83rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .vg-link { display: inline-block; margin-top: 12px; color: var(--gold); font-size: 0.83rem; font-weight: 700; text-decoration: none; }
+  .vg-link:hover { text-decoration: underline; }
+
+  /* MODAL */
+  .modal-overlay { position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.65); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; padding: 20px; }
+  .modal-overlay.open { display: flex; }
+  .modal-box { background: white; border-radius: 24px; padding: 40px 36px; max-width: 440px; width: 100%; position: relative; text-align: center; animation: fadeUp 0.4s forwards; box-shadow: 0 32px 80px rgba(0,0,0,0.3); }
+  .modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-muted); width: 32px; height: 32px; }
+  .modal-icon { font-size: 2.8rem; margin-bottom: 16px; }
+  .modal-box h3 { font-size: 1.3rem; font-weight: 800; color: var(--blue); margin-bottom: 10px; }
+  .modal-box p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
+  .modal-input { width: 100%; border: 2px solid rgba(26,58,107,0.18); border-radius: 12px; padding: 14px 18px; font-size: 1rem; font-family: 'Sora', sans-serif; margin-bottom: 14px; outline: none; transition: border-color 0.2s; }
+  .modal-input:focus { border-color: var(--blue); }
+  .modal-submit { width: 100%; background: var(--blue); color: white; border: none; border-radius: 50px; padding: 15px; font-size: 1rem; font-weight: 700; cursor: pointer; font-family: 'Sora', sans-serif; transition: all 0.2s; }
+  .modal-submit:hover { background: var(--blue-mid); transform: translateY(-1px); }
+  .modal-note { font-size: 0.75rem; color: var(--text-muted); margin-top: 14px; }
+  .modal-confirm { color: #2d7a2d; font-weight: 700; margin-top: 16px; font-size: 0.95rem; }
+
+  /* SIMULATEUR ENRICHI */
+  .result-item span { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; display: block; margin-top: 3px; }
+  .sim-email-block { margin-top: 28px; padding: 20px 24px; background: var(--sky); border-radius: 14px; border-left: 4px solid var(--blue); }
+  .sim-email-block p { font-size: 0.9rem; font-weight: 600; color: var(--blue); margin-bottom: 10px; }
+  .sim-email-row { display: flex; gap: 10px; }
+  .sim-email { flex: 1; border: 1px solid rgba(26,58,107,0.2); border-radius: 10px; padding: 10px 14px; font-size: 0.9rem; font-family: 'Sora', sans-serif; outline: none; }
+  .sim-email:focus { border-color: var(--blue); }
+  .sim-email-row button { background: var(--blue); color: white; border: none; border-radius: 10px; padding: 10px 20px; font-weight: 700; font-size: 0.85rem; cursor: pointer; font-family: 'Sora', sans-serif; white-space: nowrap; }
+  .sim-email-block small { font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 8px; }
+  .sim-confirm { color: #2d7a2d; font-weight: 700; font-size: 0.85rem; margin-top: 8px; display: none; }
+
+  /* CARTE INTERACTIVE */
+  .carte-section { background: white; padding: 80px 6vw; }
+  .carte-wrapper { display: grid; grid-template-columns: 1fr 380px; gap: 32px; margin-top: 40px; align-items: start; }
+  .carte-svg-container { background: var(--sky); border-radius: 20px; padding: 24px; position: relative; min-height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .carte-svg { width: 100%; height: auto; max-height: 460px; }
+  .quartier-zone { fill: rgba(26,58,107,0.1); stroke: var(--blue); stroke-width: 1.5; cursor: pointer; transition: fill 0.2s; }
+  .quartier-zone:hover { fill: rgba(26,58,107,0.2); }
+  .quartier-zone.selected { fill: rgba(240,165,0,0.35); stroke: var(--gold); stroke-width: 2.5; }
+  .quartier-label { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700; fill: var(--blue); pointer-events: none; text-anchor: middle; }
+  .carte-instruction { text-align: center; font-size: 0.82rem; color: var(--text-muted); margin-top: 14px; font-style: italic; }
+  .carte-panel { background: white; border: 1px solid rgba(26,58,107,0.1); border-radius: 20px; padding: 28px; box-shadow: var(--shadow); position: sticky; top: 90px; }
+  .carte-panel-empty { text-align: center; padding: 40px 20px; color: var(--text-muted); }
+  .carte-panel-empty .cp-icon { font-size: 3rem; margin-bottom: 16px; }
+  .carte-panel-empty p { font-size: 0.9rem; line-height: 1.6; }
+  .carte-panel-content { display: none; }
+  .carte-panel-content.show { display: block; animation: fadeUp 0.4s forwards; }
+  .cp-quartier-name { font-size: 1.2rem; font-weight: 800; color: var(--blue); margin-bottom: 4px; }
+  .cp-subtitle { font-size: 0.8rem; color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; }
+  .cp-measures { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  .cp-measure { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; background: var(--sky); border-left: 3px solid var(--blue-light); }
+  .cp-micon { font-size: 1.2rem; flex-shrink: 0; }
+  .cp-mtext { font-size: 0.85rem; color: var(--text); line-height: 1.45; }
+  .cp-mtext strong { display: block; font-weight: 700; color: var(--blue); font-size: 0.83rem; }
+  .cp-signal-btn { width: 100%; background: var(--blue); color: white; border: none; border-radius: 12px; padding: 14px 20px; font-weight: 700; font-size: 0.9rem; cursor: pointer; font-family: 'Sora', sans-serif; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .cp-signal-btn:hover { background: var(--blue-mid); transform: translateY(-1px); }
+  .cp-signal-form { display: none; margin-top: 16px; }
+  .cp-signal-form.show { display: block; animation: fadeUp 0.3s forwards; }
+  .cp-signal-form select, .cp-signal-form textarea { width: 100%; border: 1px solid rgba(26,58,107,0.2); border-radius: 10px; padding: 12px 14px; font-family: 'Sora', sans-serif; font-size: 0.88rem; margin-bottom: 10px; outline: none; }
+  .cp-signal-form select:focus, .cp-signal-form textarea:focus { border-color: var(--blue); }
+  .cp-signal-form textarea { min-height: 80px; resize: vertical; }
+  .cp-signal-submit { width: 100%; background: var(--gold); color: var(--blue); border: none; border-radius: 10px; padding: 12px; font-weight: 800; font-size: 0.9rem; cursor: pointer; font-family: 'Sora', sans-serif; transition: all 0.2s; }
+  .cp-signal-submit:hover { transform: translateY(-1px); }
+  .cp-signal-confirm { color: #2d7a2d; font-weight: 700; font-size: 0.85rem; text-align: center; margin-top: 10px; display: none; }
+
+  @media (max-width: 900px) { .carte-wrapper { grid-template-columns: 1fr; } .carte-panel { position: static; } .vg-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .cd-block { padding: 14px 18px; min-width: 70px; } .cd-num { font-size: 2rem; } .cd-sep { font-size: 1.8rem; } .vg-grid { grid-template-columns: 1fr; } .sim-email-row { flex-direction: column; } }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav .nav-links { display: none; }
+    .hero { padding: 100px 24px 60px; }
+    .constat-grid { grid-template-columns: 1fr; }
+    .vision-cards { grid-template-columns: 1fr; }
+    .tab-content.active { grid-template-columns: 1fr; }
+    .phares-grid { grid-template-columns: 1fr 1fr; }
+    .profiles { grid-template-columns: 1fr 1fr; }
+    .result-items { grid-template-columns: 1fr; }
+    .trans-grid { grid-template-columns: 1fr; }
+    .quiz-measures { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .phares-grid { grid-template-columns: 1fr; }
+    .profiles { grid-template-columns: 1fr 1fr; }
+    section { padding: 60px 20px; }
+  }
+
+  /* ═══════════════════════════════════════
+     QUIZ MODAL — MON PROGRAMME PERSONNALISÉ
+  ═══════════════════════════════════════ */
+  .pq-overlay {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(8, 18, 45, 0.88);
+    backdrop-filter: blur(8px);
+    display: none; align-items: flex-start; justify-content: center;
+    padding: 20px; overflow-y: auto;
+  }
+  .pq-overlay.open { display: flex; }
+  .pq-box {
+    background: #fff; border-radius: 24px;
+    width: 100%; max-width: 680px;
+    margin: auto;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+    overflow: hidden;
+    animation: fadeUp 0.4s forwards;
+  }
+  .pq-header {
+    background: linear-gradient(135deg, #0d1e42 0%, #1a3a6b 100%);
+    padding: 22px 28px 0;
+  }
+  .pq-header-inner {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 18px;
+  }
+  .pq-logo {
+    font-size: 0.82rem; font-weight: 700; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .pq-close {
+    background: rgba(255,255,255,0.12); border: none; color: white;
+    width: 34px; height: 34px; border-radius: 50%; font-size: 1rem;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .pq-close:hover { background: rgba(255,255,255,0.25); }
+  .pq-progress-bar {
+    height: 4px; background: rgba(255,255,255,0.15); border-radius: 4px;
+    overflow: hidden; margin-bottom: 10px;
+  }
+  .pq-progress-fill {
+    height: 100%; background: var(--gold);
+    border-radius: 4px; width: 10%;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .pq-progress-label {
+    font-size: 0.72rem; color: rgba(255,255,255,0.5);
+    text-align: right; padding-bottom: 14px;
+    font-weight: 600; letter-spacing: 0.05em;
+  }
+
+  .pq-body { padding: 32px 28px 28px; }
+
+  .pq-step { display: none; animation: fadeUp 0.35s forwards; }
+  .pq-step.active { display: block; }
+  .pq-result { display: none; animation: fadeUp 0.4s forwards; }
+  .pq-result.active { display: block; }
+
+  .pq-qnum {
+    font-size: 3rem; font-weight: 800;
+    color: rgba(26,58,107,0.08); line-height: 1;
+    margin-bottom: -8px; font-variant-numeric: tabular-nums;
+  }
+  .pq-question {
+    font-size: 1.2rem; font-weight: 700; color: var(--blue);
+    line-height: 1.45; margin-bottom: 24px;
+  }
+  .pq-options { display: flex; flex-direction: column; gap: 10px; }
+  .pq-opt {
+    background: var(--sky); border: 2px solid transparent;
+    border-radius: 14px; padding: 15px 20px;
+    font-family: 'Sora', sans-serif; font-size: 0.92rem; font-weight: 600;
+    color: var(--text); cursor: pointer; text-align: left;
+    transition: all 0.2s; display: flex; align-items: center; gap: 10px;
+    line-height: 1.4;
+  }
+  .pq-opt:hover {
+    background: white; border-color: var(--blue-light);
+    transform: translateX(5px);
+    box-shadow: 0 4px 16px rgba(26,58,107,0.1);
+  }
+  .pq-opt.selected {
+    background: var(--blue); color: white;
+    border-color: var(--blue);
+    transform: translateX(5px);
+  }
+
+  /* RÉSULTAT */
+  .pq-result-header { text-align: center; margin-bottom: 24px; }
+  .pq-result-icon { font-size: 3.5rem; margin-bottom: 10px; }
+  .pq-result-title {
+    font-size: 1.5rem; font-weight: 800; color: var(--blue); margin-bottom: 6px;
+  }
+  .pq-result-sub {
+    font-size: 0.85rem; color: var(--text-muted); font-style: italic;
+  }
+  .pq-result-intro {
+    background: var(--sky); border-left: 4px solid var(--gold);
+    border-radius: 0 12px 12px 0; padding: 16px 20px;
+    font-size: 0.92rem; color: var(--text); line-height: 1.65;
+    margin-bottom: 28px; font-family: 'Lora', serif; font-style: italic;
+  }
+  .pq-measures-title {
+    font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 14px;
+  }
+  .pq-cards { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .pq-card {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: white; border: 1px solid rgba(26,58,107,0.1);
+    border-radius: 14px; padding: 16px 18px;
+    box-shadow: 0 2px 8px rgba(26,58,107,0.06);
+    transition: transform 0.2s;
+  }
+  .pq-card:hover { transform: translateX(4px); }
+  .pq-card-icon {
+    font-size: 1.6rem; flex-shrink: 0;
+    width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+    background: var(--sky); border-radius: 10px;
+  }
+  .pq-card-body { flex: 1; }
+  .pq-card-title {
+    font-size: 0.92rem; font-weight: 700; color: var(--blue); margin-bottom: 4px;
+  }
+  .pq-card-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.55; }
+  .pq-card-tag {
+    display: inline-block; margin-top: 6px;
+    background: var(--sky); color: var(--blue);
+    font-size: 0.7rem; font-weight: 700; padding: 3px 10px;
+    border-radius: 20px; text-transform: uppercase; letter-spacing: 0.06em;
+  }
+
+  .pq-result-footer {
+    display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+    border-top: 1px solid rgba(26,58,107,0.08); padding-top: 24px;
+  }
+  .pq-footer-btn {
+    padding: 12px 22px; border-radius: 50px;
+    font-size: 0.85rem; font-weight: 700;
+    font-family: 'Sora', sans-serif; cursor: pointer;
+    text-decoration: none; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 6px;
+    border: none;
+  }
+  .pq-btn-blue { background: var(--blue); color: white; }
+  .pq-btn-blue:hover { background: var(--blue-mid); transform: translateY(-2px); }
+  .pq-btn-outline {
+    background: transparent; color: var(--blue);
+    border: 2px solid rgba(26,58,107,0.2);
+  }
+  .pq-btn-outline:hover { border-color: var(--blue); transform: translateY(-2px); }
+  .pq-btn-gold { background: var(--gold); color: var(--blue); }
+  .pq-btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(240,165,0,0.35); }
+
+  @media (max-width: 600px) {
+    .pq-body { padding: 24px 18px 20px; }
+    .pq-question { font-size: 1.05rem; }
+    .pq-opt { font-size: 0.85rem; padding: 13px 16px; }
+    .pq-result-footer { flex-direction: column; }
+    .pq-footer-btn { justify-content: center; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    🏛️ Ensemble <span>pour Vesoul</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#constat">Le constat</a></li>
+    <li><a href="#programme">Le programme</a></li>
+    <li><a href="#simulateur">Mon profil</a></li>
+    <li><a href="#carte">Ma ville</a></li>
+    <li><a href="#voter">Voter</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">Rejoindre</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+  <div class="hero-eyebrow">Vesoul 2026 — Un nouveau souffle</div>
+  <h1>La ville que vous <em>méritez</em> existe déjà.</h1>
+  <p class="hero-sub">Ensemble, on peut faire de Vesoul une ville plus sûre, plus vivante et plus solidaire — pour chaque habitant, chaque jour.</p>
+  <a href="https://linktr.ee/anthonylouise2026" target="_blank" rel="noopener" class="hero-cta">
+    Découvrir le projet pour Vesoul
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  <div class="hero-pills">
+    <span class="pill">🛡️ Plus sûre</span>
+    <span class="pill">🤝 Plus solidaire</span>
+    <span class="pill">🌿 Plus vivante</span>
+    <span class="pill">🚴 Plus mobile</span>
+    <span class="pill">💡 Plus transparente</span>
+  </div>
+  <div class="hero-scroll">Défiler</div>
+</section>
+
+<!-- COMPTE A REBOURS -->
+<section class="countdown-section" id="voter">
+  <div class="reveal">
+    <div class="section-label">Le rendez-vous citoyen</div>
+    <h2 class="section-title">Il reste…</h2>
+  </div>
+
+  <div class="countdown-display reveal" id="countdown-live">
+    <div class="cd-block">
+      <div class="cd-num" id="cd-days">--</div>
+      <div class="cd-label">jours</div>
+    </div>
+    <div class="cd-sep">:</div>
+    <div class="cd-block">
+      <div class="cd-num" id="cd-hours">--</div>
+      <div class="cd-label">heures</div>
+    </div>
+    <div class="cd-sep">:</div>
+    <div class="cd-block">
+      <div class="cd-num" id="cd-mins">--</div>
+      <div class="cd-label">minutes</div>
+    </div>
+    <div class="cd-sep">:</div>
+    <div class="cd-block">
+      <div class="cd-num" id="cd-secs">--</div>
+      <div class="cd-label">secondes</div>
+    </div>
+  </div>
+
+  <div id="cd-expired-msg" class="cd-expired" style="display:none">
+    <div class="cd-expired-text">🗳️ Aujourd'hui, les habitants choisissent l'avenir de leur ville.</div>
+  </div>
+
+  <p class="cd-subtitle reveal">avant le 1er tour des élections municipales — <strong>Mars 2026</strong></p>
+
+  <div class="cd-actions reveal">
+    <button class="cd-btn-primary" onclick="openProgrammeQuiz()">👤 Mon programme personnalisé</button>
+    <a href="#carte" class="cd-btn-primary" style="background:rgba(255,255,255,0.15);color:white;box-shadow:none;text-decoration:none;">📍 Les projets par quartier</a>
+    <button class="cd-btn-secondary" onclick="openRappelModal()">🔔 Recevoir un rappel la veille</button>
+  </div>
+
+  <div class="voter-guide reveal">
+    <div class="vg-title">📋 Comprendre avant de voter</div>
+    <div class="vg-grid">
+      <div class="vg-card">
+        <div class="vg-icon">🎯</div>
+        <h4>Le projet en 30 secondes</h4>
+        <p>Sécurité renforcée, familles soutenues, mobilité améliorée, transparence totale. Un programme construit autour de votre quotidien, pas d'un bureau.</p>
+      </div>
+      <div class="vg-card">
+        <div class="vg-icon">📍</div>
+        <h4>Quartier par quartier</h4>
+        <p>Des mesures précises, localisées, pour chaque secteur de Vesoul. Voyez ce qui change près de chez vous sur la carte interactive.</p>
+        <a href="#carte" class="vg-link">Voir la carte →</a>
+      </div>
+      <div class="vg-card">
+        <div class="vg-icon">👤</div>
+        <h4>Ce qui change pour vous</h4>
+        <p>Parent, retraité, commerçant, salarié — découvrez en quelques clics les mesures qui s'appliquent directement à votre vie.</p>
+        <a href="#simulateur" class="vg-link">Mon simulateur →</a>
+      </div>
+      <div class="vg-card">
+        <div class="vg-icon">📞</div>
+        <h4>Nous sommes disponibles</h4>
+        <p>Des permanences, des cafés citoyens, un élu référent par quartier. Avant et après le vote, nous restons joignables.</p>
+        <a href="https://linktr.ee/anthonylouise2026" target="_blank" class="vg-link">Nous contacter →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL RAPPEL -->
+<div class="modal-overlay" id="rappel-modal">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeRappelModal()" aria-label="Fermer">✕</button>
+    <div class="modal-icon">🔔</div>
+    <h3>Un rappel la veille du vote</h3>
+    <p>Laissez votre adresse email et nous vous enverrons un seul message, uniquement la veille du scrutin.</p>
+    <input type="email" class="modal-input" id="rappel-email" placeholder="votre@email.fr" autocomplete="email">
+    <button class="modal-submit" onclick="submitRappel()">Confirmer mon rappel</button>
+    <p class="modal-note">Aucune inscription. Aucun spam. Votre email ne sera jamais partagé ni revendu.</p>
+    <div class="modal-confirm" id="rappel-confirm" style="display:none">
+      ✅ C'est noté ! Vous recevrez un seul email, uniquement la veille du vote.
+    </div>
+  </div>
+</div>
+
+<!-- CONSTAT -->
+<section class="constat" id="constat">
+  <div class="reveal">
+    <div class="section-label">Le constat</div>
+    <h2 class="section-title">Ce que vous ressentez,<br>c'est réel.</h2>
+    <p class="section-sub">Vesoul a tous les atouts pour être une belle ville. Pourtant, beaucoup d'habitants ressentent que quelque chose manque. Ce sentiment, on l'entend dans les rues, dans les commerces, dans les familles.</p>
+  </div>
+  <div class="constat-grid reveal">
+    <div class="constat-card reveal-delay-1">
+      <span class="emoji">😟</span>
+      <p>"J'hésite à laisser mes enfants rentrer seuls de l'école. Les trottoirs sont dans un état… et le soir, certains coins me font peur."</p>
+      <small>— Un parent du centre-ville</small>
+    </div>
+    <div class="constat-card reveal-delay-2">
+      <span class="emoji">🧓</span>
+      <p>"Depuis que j'ai arrêté de conduire, je suis presque enfermée chez moi. Pour aller au marché, c'est une véritable expédition."</p>
+      <small>— Une résidente de 73 ans</small>
+    </div>
+    <div class="constat-card reveal-delay-3">
+      <span class="emoji">🛍️</span>
+      <p>"Le centre-ville se vide. Des vitrines s'éteignent une à une. J'ai peur que dans 5 ans, il ne reste plus rien."</p>
+      <small>— Un commerçant de la rue du Breuil</small>
+    </div>
+    <div class="constat-card reveal-delay-4">
+      <span class="emoji">🎓</span>
+      <p>"J'aimerais rester à Vesoul, mais il n'y a rien pour les jeunes ici. Mes amis partent tous à Besançon ou à Dijon."</p>
+      <small>— Un étudiant de 22 ans</small>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision" id="vision">
+  <div class="reveal">
+    <div class="section-label">La vision</div>
+    <h2 class="section-title">Vesoul dans 6 ans :<br>imaginez votre quotidien.</h2>
+    <p class="section-sub">Pas des promesses creuses. Une projection concrète de ce que votre ville peut redevenir avec les bonnes décisions, dès le premier mandat.</p>
+  </div>
+  <div class="vision-cards reveal">
+    <div class="vision-card reveal-delay-1">
+      <div class="icon">☀️</div>
+      <h3>Le matin</h3>
+      <p>Votre enfant part à l'école à pied, sur un trottoir refait, bien éclairé, sécurisé. Vous respirez. Un vélo en libre-service vous attend à deux pas.</p>
+    </div>
+    <div class="vision-card reveal-delay-2">
+      <div class="icon">🌆</div>
+      <h3>La journée</h3>
+      <p>Le centre-ville est animé, les commerces ouverts. La mairie répond à vos démarches en quelques clics. Une navette électrique gratuite passe toutes les 30 minutes.</p>
+    </div>
+    <div class="vision-card reveal-delay-3">
+      <div class="icon">🌙</div>
+      <h3>Le soir</h3>
+      <p>Un événement en plein air, un marché nocturne, un concert à la salle de spectacle. Vesoul vibre. Et vous rentrez serein, dans des rues propres et bien éclairées.</p>
+    </div>
+    <div class="vision-card reveal-delay-1">
+      <div class="icon">🏃</div>
+      <h3>Le week-end</h3>
+      <p>Une piste cyclable sécurisée pour la famille. Un skate-park rénové pour les ados. Le carnaval, les marchés, la vie qui reprend de plus belle.</p>
+    </div>
+    <div class="vision-card reveal-delay-2">
+      <div class="icon">🤝</div>
+      <h3>Pour nos aînés</h3>
+      <p>Plus aucun senior isolé. Une navette pour les emmener chez le médecin, au marché. Un guichet unique où tout se règle sans se perdre dans la bureaucratie.</p>
+    </div>
+    <div class="vision-card reveal-delay-3">
+      <div class="icon">🌱</div>
+      <h3>Pour la planète</h3>
+      <p>Des arbres plantés, des pistes cyclables, des bâtiments rénovés. Une ville qui respire. Un arbre par naissance, pour chaque nouveau Vésulien.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME INTERACTIF -->
+<section class="programme" id="programme">
+  <div class="reveal">
+    <div class="section-label">Le programme complet</div>
+    <h2 class="section-title">Des actions concrètes,<br>thème par thème.</h2>
+    <p class="section-sub">Cliquez sur un thème pour découvrir les mesures détaillées et ce qu'elles changent pour vous, concrètement.</p>
+  </div>
+
+  <div class="programme-tabs reveal">
+    <button class="tab-btn active" onclick="showTab('securite')">🛡️ Sécurité</button>
+    <button class="tab-btn" onclick="showTab('familles')">👨‍👩‍👧 Familles</button>
+    <button class="tab-btn" onclick="showTab('jeunesse')">🎸 Jeunesse</button>
+    <button class="tab-btn" onclick="showTab('seniors')">🧓 Seniors</button>
+    <button class="tab-btn" onclick="showTab('mobilite')">🚴 Mobilité</button>
+    <button class="tab-btn" onclick="showTab('centreville')">🏪 Centre-ville</button>
+    <button class="tab-btn" onclick="showTab('pouvoir')">💶 Pouvoir d'achat</button>
+    <button class="tab-btn" onclick="showTab('asso')">🌐 Associations</button>
+  </div>
+
+  <!-- SÉCURITÉ -->
+  <div class="tab-content active" id="tab-securite">
+    <div class="measure-card reveal">
+      <div class="measure-icon">🚓</div>
+      <div class="measure-body">
+        <h4>Police municipale renforcée (15 agents)</h4>
+        <p>Votre enfant peut rentrer du collège sans que vous passiez la soirée à vous inquiéter. Des agents de proximité, que vous connaissez par leur prénom.</p>
+        <span class="measure-tag">Dès le 1er mandat</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🐕</div>
+      <div class="measure-body">
+        <h4>Brigade canine + caméras ciblées</h4>
+        <p>Les points sensibles de la ville seront sécurisés. Pas de surveillance de masse, mais une présence intelligente là où ça compte.</p>
+        <span class="measure-tag">Prévention</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">🏫</div>
+      <div class="measure-body">
+        <h4>Sécurisation des abords des écoles</h4>
+        <p>Ralentisseurs, signalisation, zones de pose-minute aménagées. Le matin, déposer vos enfants ne sera plus un parcours du combattant.</p>
+        <span class="measure-tag">Priorité enfance</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-3">
+      <div class="measure-icon">💡</div>
+      <div class="measure-body">
+        <h4>Éclairage LED intelligent</h4>
+        <p>Des trottoirs rénovés et un éclairage moderne qui s'adapte. Les rues sombres appartiennent au passé. Vous rentrez le soir sans appréhension.</p>
+        <span class="measure-tag">Sécurité + économies</span>
+      </div>
+    </div>
+    <div class="measure-card reveal">
+      <div class="measure-icon">🔀</div>
+      <div class="measure-body">
+        <h4>Sécurisation du rond-point de la Vaugine</h4>
+        <p>Un point noir que tous les Vésuliens connaissent. On s'en occupe enfin, avec un aménagement pensé pour piétons, cyclistes et automobilistes.</p>
+        <span class="measure-tag">Infrastructure</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🛤️</div>
+      <div class="measure-body">
+        <h4>Marquage routier entièrement refait</h4>
+        <p>Passages piétons effacés, lignes illisibles : on remet à neuf l'ensemble du marquage pour que tout le monde sache où il peut circuler.</p>
+        <span class="measure-tag">Voirie</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">📹</div>
+      <div class="measure-body">
+        <h4>Vidéoprotection modernisée et 100 % opérationnelle</h4>
+        <p>Extension du réseau, réparation systématique des caméras défaillantes, et équipement des agents en caméras-piétons. Une présence crédible, là où ça compte.</p>
+        <span class="measure-tag">Prévention</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-3">
+      <div class="measure-icon">🤝</div>
+      <div class="measure-body">
+        <h4>Médiation de proximité et accompagnement des victimes</h4>
+        <p>Une équipe dédiée aux incivilités et à la médiation. Un bureau d'accueil pour les victimes — violences, enfants en souffrance — coordonné avec la police nationale et les services sociaux.</p>
+        <span class="measure-tag">Solidarité</span>
+      </div>
+    </div>
+    <div class="measure-card reveal">
+      <div class="measure-icon">🚨</div>
+      <div class="measure-body">
+        <h4>Bornes d'urgence + présence soirées et week-ends</h4>
+        <p>Des bornes reliées aux forces de l'ordre dans les zones sensibles. Une police municipale présente aussi le soir et le week-end — parce que les incivilités ne s'arrêtent pas à 17h.</p>
+        <span class="measure-tag">Disponibilité</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🚦</div>
+      <div class="measure-body">
+        <h4>Radars pédagogiques + feux intelligents</h4>
+        <p>Des radars pédagogiques sur les axes à risque et des feux à régulation intelligente pour fluidifier la circulation et réduire les comportements dangereux.</p>
+        <span class="measure-tag">Infrastructure</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAMILLES -->
+  <div class="tab-content" id="tab-familles">
+    <div class="measure-card reveal">
+      <div class="measure-icon">📚</div>
+      <div class="measure-body">
+        <h4>Étude surveillée + périscolaire enrichi</h4>
+        <p>Votre enfant fait ses devoirs à l'école, encadré, stimulé. Vous rentrez du travail serein, sans la pression des devoirs le soir.</p>
+        <span class="measure-tag">Quotidien</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🌳</div>
+      <div class="measure-body">
+        <h4>Cours d'école végétalisées et zones d'ombre</h4>
+        <p>L'été, vos enfants ne jouent plus sur du béton brûlant. Des cours fraîches, des arbres, des zones de jeux repensées pour le bien-être.</p>
+        <span class="measure-tag">Bien-être</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">🏫</div>
+      <div class="measure-body">
+        <h4>Équipements scolaires modernisés</h4>
+        <p>Tableaux numériques, mobilier adapté, espaces repensés. L'école de Vesoul au niveau des meilleures villes de la région.</p>
+        <span class="measure-tag">Priorité</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-3">
+      <div class="measure-icon">💙</div>
+      <div class="measure-body">
+        <h4>Aide aux familles monoparentales</h4>
+        <p>Un accompagnement concret : accès prioritaire aux structures, aide aux démarches, réseau de solidarité. Vous n'êtes pas seul·e.</p>
+        <span class="measure-tag">Solidarité</span>
+      </div>
+    </div>
+    <div class="measure-card reveal">
+      <div class="measure-icon">🍼</div>
+      <div class="measure-body">
+        <h4>Plus de places en crèche, horaires élargis</h4>
+        <p>Augmentation des capacités d'accueil, développement de micro-crèches et accueil occasionnel. Des horaires élargis le matin et le soir pour s'adapter à votre réalité professionnelle.</p>
+        <span class="measure-tag">Petite enfance</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🍽️</div>
+      <div class="measure-body">
+        <h4>Cantine livrée dans les écoles — fini les trajets bus</h4>
+        <p>Les repas livrés directement dans chaque école, dans des espaces calmes et adaptés. Moins de stress pour les enfants, moins de logistique pour les familles.</p>
+        <span class="measure-tag">Quotidien</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">🌞</div>
+      <div class="measure-body">
+        <h4>Programme "Vacances Actives" — sport, culture et loisirs</h4>
+        <p>Des vacances enrichissantes pour tous les enfants : ateliers culturels, découverte de nouveaux sports, sorties. Parce qu'une bonne enfance ne devrait pas dépendre du budget familial.</p>
+        <span class="measure-tag">Égalité des chances</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-3">
+      <div class="measure-icon">♿</div>
+      <div class="measure-body">
+        <h4>Inclusion pleine des enfants en situation de handicap</h4>
+        <p>Des structures adaptées, des équipes formées, un accompagnement individualisé. Chaque enfant de Vesoul a sa place — sans exception.</p>
+        <span class="measure-tag">Inclusion</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- JEUNESSE -->
+  <div class="tab-content" id="tab-jeunesse">
+    <div class="measure-card reveal">
+      <div class="measure-icon">⚽</div>
+      <div class="measure-body">
+        <h4>Complexes sportifs rénovés</h4>
+        <p>Des infrastructures dignes de votre talent. Vesoul peut devenir une vraie ville sport, qui retient ses jeunes plutôt que de les voir partir.</p>
+        <span class="measure-tag">Sport</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🎵</div>
+      <div class="measure-body">
+        <h4>Mini salle de concert + aires de jeux familiales</h4>
+        <p>Un endroit où les artistes locaux peuvent jouer, où les familles viennent ensemble. La vie culturelle qui reprend, pour tous les âges.</p>
+        <span class="measure-tag">Culture</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">🎨</div>
+      <div class="measure-body">
+        <h4>Salle d'expression artistique</h4>
+        <p>Un espace dédié à la création : musique, dessin, danse, théâtre. Pour que chaque jeune Vésulien trouve sa place et s'épanouisse ici.</p>
+        <span class="measure-tag">Expression</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-3">
+      <div class="measure-icon">🏠</div>
+      <div class="measure-body">
+        <h4>Maison des associations modernisée</h4>
+        <p>Un hub vibrant où les initiatives naissent, où les associations trouvent leurs ressources, où les jeunes créent leurs projets.</p>
+        <span class="measure-tag">Engagement</span>
+      </div>
+    </div>
+    <div class="measure-card reveal">
+      <div class="measure-icon">💻</div>
+      <div class="measure-body">
+        <h4>Campus 3.0 — formations, numérique et métiers d'avenir</h4>
+        <p>Un espace dédié aux jeunes : formations qualifiantes, accès au numérique, espaces de travail pour étudiants et jeunes actifs. Vesoul devient une ville où l'on peut construire son avenir sans partir.</p>
+        <span class="measure-tag">Avenir</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🚀</div>
+      <div class="measure-body">
+        <h4>Soutien à l'entrepreneuriat et à l'installation des jeunes</h4>
+        <p>Accompagnement concret pour créer son activité, lien renforcé avec la mission locale, aides à l'installation pour les jeunes qui veulent s'ancrer à Vesoul. Le territoire investit sur sa jeunesse.</p>
+        <span class="measure-tag">Entrepreneuriat</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">🎟️</div>
+      <div class="measure-body">
+        <h4>Pass Sport & Culture municipal</h4>
+        <p>Un pass donnant accès à tarifs réduits aux équipements sportifs, aux événements culturels et aux activités associatives. Participer à la vie de Vesoul ne devrait pas être une question de moyens.</p>
+        <span class="measure-tag">Accès pour tous</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SENIORS -->
+  <div class="tab-content" id="tab-seniors">
+    <div class="measure-card reveal">
+      <div class="measure-icon">🎫</div>
+      <div class="measure-body">
+        <h4>Guichet unique seniors et autonomie</h4>
+        <p>Finies les courses entre services. Un seul endroit, des interlocuteurs dédiés, pour toutes vos démarches liées à la retraite, à la santé, à l'autonomie.</p>
+        <span class="measure-tag">Priorité</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🚐</div>
+      <div class="measure-body">
+        <h4>Navettes électriques gratuites</h4>
+        <p>Marché, médecin, centre-ville : une navette gratuite et électrique passe régulièrement. Plus besoin de dépendre de quelqu'un pour sortir de chez vous.</p>
+        <span class="measure-tag">Autonomie</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">🪑</div>
+      <div class="measure-body">
+        <h4>Aménagement urbain senior-friendly</h4>
+        <p>Bancs supplémentaires, cheminements accessibles, fontaines à eau. Vesoul redevient une ville où il fait bon marcher à tout âge.</p>
+        <span class="measure-tag">Accessibilité</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-3">
+      <div class="measure-icon">💻</div>
+      <div class="measure-body">
+        <h4>Ateliers numériques intergénérationnels</h4>
+        <p>Des ateliers pour apprivoiser le numérique, animés par des jeunes. Deux générations qui se rencontrent, s'apprennent mutuellement.</p>
+        <span class="measure-tag">Lien social</span>
+      </div>
+    </div>
+    <div class="measure-card reveal">
+      <div class="measure-icon">❤️</div>
+      <div class="measure-body">
+        <h4>Objectif : aucun senior isolé</h4>
+        <p>Un réseau de voisinage, des visites régulières, un numéro dédié. Personne ne doit rester seul à Vesoul. C'est une question de dignité.</p>
+        <span class="measure-tag">Solidarité</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🏥</div>
+      <div class="measure-body">
+        <h4>Attirer des médecins et spécialistes à Vesoul</h4>
+        <p>Accompagnement administratif, mise à disposition de locaux, dispositifs incitatifs — tout en coordination avec l'ARS, l'hôpital et les professionnels de santé. Consulter près de chez soi, c'est possible.</p>
+        <span class="measure-tag">Santé</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">☕</div>
+      <div class="measure-body">
+        <h4>Café des familles et parrainage solidaire</h4>
+        <p>Un lieu de rencontre pour briser l'isolement, développer le parrainage familial et le tutorat. Avec une aide à la mobilité pour les familles monoparentales et les personnes les plus isolées.</p>
+        <span class="measure-tag">Lien social</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-3">
+      <div class="measure-icon">🏡</div>
+      <div class="measure-body">
+        <h4>Logements adaptés au vieillissement</h4>
+        <p>Développement de logements accessibles, accompagnement à la rénovation, travail avec les bailleurs pour que chacun puisse vieillir chez soi, dans de bonnes conditions.</p>
+        <span class="measure-tag">Autonomie</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILITÉ -->
+  <div class="tab-content" id="tab-mobilite">
+    <div class="measure-card reveal">
+      <div class="measure-icon">🚲</div>
+      <div class="measure-body">
+        <h4>Vélos en libre-service</h4>
+        <p>Des stations de vélos disponibles dans toute la ville. Pour aller au boulot, à la gare ou au marché sans voiture et sans stress de parking.</p>
+        <span class="measure-tag">Nouveau</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🛣️</div>
+      <div class="measure-body">
+        <h4>Pistes cyclables sécurisées (vélos & trottinettes)</h4>
+        <p>Des voies séparées, continues, lisibles. Vous pouvez rouler avec vos enfants le week-end sans frôler les voitures. La mobilité douce enfin réelle.</p>
+        <span class="measure-tag">Priorité</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">🚶</div>
+      <div class="measure-body">
+        <h4>Trottoirs accessibles et rénovés</h4>
+        <p>Plus de trottoir défoncé, de bord de trottoir impossible en poussette ou en fauteuil. Une ville praticable pour tous, pas seulement pour les valides.</p>
+        <span class="measure-tag">Accessibilité</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-3">
+      <div class="measure-icon">🚐</div>
+      <div class="measure-body">
+        <h4>Navette électrique interquartiers + transport adapté</h4>
+        <p>Une navette électrique reliant les quartiers au centre-ville, aux équipements et à la gare. Un service adapté pour les seniors et les personnes en situation de handicap. La mobilité comme droit, pas comme privilège.</p>
+        <span class="measure-tag">Inclusion</span>
+      </div>
+    </div>
+    <div class="measure-card reveal">
+      <div class="measure-icon">🗺️</div>
+      <div class="measure-body">
+        <h4>Refonte concertée du plan de circulation</h4>
+        <p>Un plan de circulation du centre-ville repensé avec les habitants : moins de conflits entre piétons, vélos et voitures, plus de fluidité et de sécurité pour tous.</p>
+        <span class="measure-tag">Concertation</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🚆</div>
+      <div class="measure-body">
+        <h4>Meilleures liaisons vers la région et Paris</h4>
+        <p>Nous travaillons avec les autorités compétentes pour améliorer les connexions ferroviaires et régionales. Vesoul bien connecté, c'est Vesoul qui attire.</p>
+        <span class="measure-tag">Ouverture</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CENTRE-VILLE -->
+  <div class="tab-content" id="tab-centreville">
+    <div class="measure-card reveal">
+      <div class="measure-icon">🎪</div>
+      <div class="measure-body">
+        <h4>Carnaval relancé + marché nocturne élargi</h4>
+        <p>Le centre-ville qui reprend vie. Des événements qui font que les habitants sortent, se retrouvent, dépensent local. Un agenda qui donne envie d'y être.</p>
+        <span class="measure-tag">Animations</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🏘️</div>
+      <div class="measure-body">
+        <h4>Quartiers revalorisés, voirie entretenue</h4>
+        <p>Chaque quartier mérite d'être propre et entretenu. Voirie, espaces verts, mobilier urbain : un programme de réhabilitation de l'ensemble de la ville.</p>
+        <span class="measure-tag">Cadre de vie</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">🏦</div>
+      <div class="measure-body">
+        <h4>La Banque des Générations — guichet central</h4>
+        <p>Un lieu unique : associations, accueil seniors, espace jeunesse, pôle handicap, salle culturelle. Un endroit pour tous, ouvert à tous, au cœur de Vesoul.</p>
+        <span class="measure-tag">Innovation</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-3">
+      <div class="measure-icon">🌿</div>
+      <div class="measure-body">
+        <h4>Plantation massive d'arbres (1 arbre par naissance)</h4>
+        <p>Un geste symbolique et concret : pour chaque enfant né à Vesoul, un arbre est planté. Dans 20 ans, la ville sera plus verte et vous saurez pourquoi.</p>
+        <span class="measure-tag">Nature</span>
+      </div>
+    </div>
+    <div class="measure-card reveal">
+      <div class="measure-icon">🏪</div>
+      <div class="measure-body">
+        <h4>Guichet unique pour commerçants et entrepreneurs</h4>
+        <p>Un seul interlocuteur municipal pour toutes les démarches : installation, autorisation, aide à la création. Accompagnement à l'insertion professionnelle et développement d'espaces de coworking en centre-ville.</p>
+        <span class="measure-tag">Commerce</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🔑</div>
+      <div class="measure-body">
+        <h4>Plan logement : vacants, adaptés, accessibles</h4>
+        <p>Remise sur le marché des logements vacants, création de T1/T2 pour jeunes et personnes seules, T3/T4 pour familles monoparentales. Un accompagnement social pour les locataires en difficulté.</p>
+        <span class="measure-tag">Logement</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">☀️</div>
+      <div class="measure-body">
+        <h4>Panneaux solaires, îlots de fraîcheur et végétalisation</h4>
+        <p>Panneaux photovoltaïques sur les bâtiments communaux, création d'îlots de fraîcheur, végétalisation urbaine et développement de la biodiversité. Vesoul prépare son avenir climatique.</p>
+        <span class="measure-tag">Écologie</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- POUVOIR D'ACHAT -->
+  <div class="tab-content" id="tab-pouvoir">
+    <div class="measure-card reveal">
+      <div class="measure-icon">📉</div>
+      <div class="measure-body">
+        <h4>Baisse progressive de la taxe foncière</h4>
+        <p>Votre facture allégée. Une baisse progressive, honnête, basée sur une gestion rigoureuse — pas des promesses impossibles.</p>
+        <span class="measure-tag">Engagement chiffré</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">💳</div>
+      <div class="measure-body">
+        <h4>Carte avantages locale chez les commerçants</h4>
+        <p>Une carte de réduction valable dans les commerces du centre. Faire ses achats à Vesoul devient avantageux. Le commerce local en profite aussi.</p>
+        <span class="measure-tag">Économies</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">🔍</div>
+      <div class="measure-body">
+        <h4>Audit et optimisation des services municipaux</h4>
+        <p>On ne dépense pas votre argent à l'aveugle. Un audit complet pour identifier les gaspillages et rediriger les économies vers ce qui compte vraiment.</p>
+        <span class="measure-tag">Transparence</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-3">
+      <div class="measure-icon">💡</div>
+      <div class="measure-body">
+        <h4>Économies via l'éclairage LED et rénovation énergétique</h4>
+        <p>Éclairage intelligent et rénovation énergétique des bâtiments municipaux : moins de dépenses, moins d'émissions. Des économies qui se répercutent directement sur les finances de la ville.</p>
+        <span class="measure-tag">Écologie & gestion</span>
+      </div>
+    </div>
+    <div class="measure-card reveal">
+      <div class="measure-icon">🏠</div>
+      <div class="measure-body">
+        <h4>Plan de rénovation énergétique des logements</h4>
+        <p>Accompagnement des propriétaires et locataires pour rénover leur logement : isolation, chauffage, aides mobilisées. Moins de factures, plus de confort, une ville qui avance.</p>
+        <span class="measure-tag">Pouvoir d'achat</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ASSOCIATIONS -->
+  <div class="tab-content" id="tab-asso">
+    <div class="measure-card reveal">
+      <div class="measure-icon">🏛️</div>
+      <div class="measure-body">
+        <h4>Maison des associations modernisée</h4>
+        <p>Un espace rénové, connecté, accessible. Vos associations ont un foyer digne de leur engagement. Plus de débrouille avec des salles inadaptées.</p>
+        <span class="measure-tag">Support</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">📋</div>
+      <div class="measure-body">
+        <h4>Simplification des démarches associatives</h4>
+        <p>Demandes de subvention, réservation de salles, autorisations d'événements : tout en ligne, clair, rapide. L'énergie passe sur les projets, pas sur la paperasse.</p>
+        <span class="measure-tag">Simplification</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">🤝</div>
+      <div class="measure-body">
+        <h4>Soutien financier renforcé aux associations locales</h4>
+        <p>Les associations font vivre Vesoul. Elles méritent un soutien concret et prévisible, avec des critères transparents, pas du saupoudrage aléatoire.</p>
+        <span class="measure-tag">Engagement</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-3">
+      <div class="measure-icon">🗓️</div>
+      <div class="measure-body">
+        <h4>Événements toute l'année — agenda partagé</h4>
+        <p>Un agenda municipal ouvert, co-construit avec les associations. Vesoul festive, sportive, culturelle : 52 semaines d'animation, pas seulement l'été.</p>
+        <span class="measure-tag">Vie locale</span>
+      </div>
+    </div>
+    <div class="measure-card reveal">
+      <div class="measure-icon">🏃</div>
+      <div class="measure-body">
+        <h4>Zones de proximité sportive et initiations gratuites</h4>
+        <p>Parcours santé, aires fitness de quartier, journées sport & culture intergénérationnelles. Des initiations sportives gratuites pour que bouger ensemble soit accessible à tous.</p>
+        <span class="measure-tag">Sport pour tous</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-1">
+      <div class="measure-icon">🎨</div>
+      <div class="measure-body">
+        <h4>Parcours culturels, fresques et mémoire locale</h4>
+        <p>Intégration de fresques et sculptures dans l'espace public, création d'un parcours culturel urbain, projet mémoire locale. Vesoul porte son histoire fièrement.</p>
+        <span class="measure-tag">Culture</span>
+      </div>
+    </div>
+    <div class="measure-card reveal reveal-delay-2">
+      <div class="measure-icon">🔨</div>
+      <div class="measure-body">
+        <h4>Chantiers participatifs citoyens</h4>
+        <p>Des projets d'embellissement ou d'aménagement menés avec les habitants eux-mêmes. Parce que ceux qui habitent un quartier en sont les meilleurs architectes.</p>
+        <span class="measure-tag">Citoyenneté</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MESURES PHARES -->
+<section class="phares" id="phares">
+  <div class="reveal">
+    <div class="section-label">Les chiffres qui changent tout</div>
+    <h2 class="section-title">Nos engagements en chiffres.</h2>
+    <p class="section-sub">Des promesses mesurables, des objectifs précis. Pour qu'à la fin du mandat, vous puissiez juger sur pièces.</p>
+  </div>
+  <div class="phares-grid reveal">
+    <div class="phare-card reveal-delay-1">
+      <div class="phare-num">15</div>
+      <h3>Agents de police municipale</h3>
+      <p>Opérationnels dès la 1re année du mandat, avec brigade canine et caméras ciblées.</p>
+    </div>
+    <div class="phare-card reveal-delay-2">
+      <div class="phare-num">0</div>
+      <h3>Senior isolé</h3>
+      <p>Notre objectif. Un réseau de voisinage, des visites, un numéro dédié pour y parvenir.</p>
+    </div>
+    <div class="phare-card reveal-delay-3">
+      <div class="phare-num">1</div>
+      <h3>Arbre par naissance</h3>
+      <p>Planté à Vesoul pour chaque enfant qui vient au monde. Un engagement pour les générations futures.</p>
+    </div>
+    <div class="phare-card reveal-delay-1">
+      <div class="phare-num">∞</div>
+      <h3>Navettes gratuites</h3>
+      <p>Électriques, régulières, pour les seniors et les habitants sans voiture. La mobilité pour tous.</p>
+    </div>
+    <div class="phare-card reveal-delay-2">
+      <div class="phare-num">52</div>
+      <h3>Semaines animées</h3>
+      <p>Un agenda d'événements construit avec les associations pour faire vivre le centre toute l'année.</p>
+    </div>
+    <div class="phare-card reveal-delay-3">
+      <div class="phare-num">📲</div>
+      <h3>Démarches simplifiées</h3>
+      <p>Un guichet unique municipal pour toutes vos demandes. Plus besoin de courir d'un bureau à l'autre.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULATEUR -->
+<section class="simulateur" id="simulateur">
+  <div class="reveal">
+    <div class="section-label">Ce que ça change pour vous</div>
+    <h2 class="section-title">Votre programme personnalisé.</h2>
+    <p class="section-sub">Choisissez votre profil et découvrez comment chaque mesure transforme votre quotidien à Vesoul. En quelques clics, sans inscription.</p>
+  </div>
+
+  <div class="profiles reveal">
+    <button class="profile-btn" onclick="showProfile('parent', this)">
+      <span class="p-icon">👨‍👩‍👧</span><span class="p-label">Parent</span>
+    </button>
+    <button class="profile-btn" onclick="showProfile('retraite', this)">
+      <span class="p-icon">🧓</span><span class="p-label">Retraité·e</span>
+    </button>
+    <button class="profile-btn" onclick="showProfile('commercant', this)">
+      <span class="p-icon">🛍️</span><span class="p-label">Commerçant</span>
+    </button>
+    <button class="profile-btn" onclick="showProfile('etudiant', this)">
+      <span class="p-icon">🎓</span><span class="p-label">Étudiant·e</span>
+    </button>
+    <button class="profile-btn" onclick="showProfile('salarie', this)">
+      <span class="p-icon">💼</span><span class="p-label">Salarié·e</span>
+    </button>
+    <button class="profile-btn" onclick="showProfile('jeune', this)">
+      <span class="p-icon">🚀</span><span class="p-label">Jeune actif</span>
+    </button>
+    <button class="profile-btn" onclick="showProfile('asso', this)">
+      <span class="p-icon">🌐</span><span class="p-label">Association</span>
+    </button>
+  </div>
+
+  <!-- PARENT -->
+  <div class="profile-result" id="result-parent">
+    <h3>👨‍👩‍👧 Concrètement, voici ce qui changera pour vous.</h3>
+    <div class="result-items">
+      <div class="result-item"><div class="ri-icon">🏫</div><div><strong>Abords d'école sécurisés</strong><span>Votre enfant rentre à pied. Vous soufflez enfin le soir.</span></div></div>
+      <div class="result-item"><div class="ri-icon">📚</div><div><strong>Étude surveillée jusqu'à 18h</strong><span>Les devoirs sont faits à l'école. Votre soirée vous appartient.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🍽️</div><div><strong>Cantine livrée en classe</strong><span>Finis les trajets bus. Les repas arrivent dans des espaces calmes directement à l'école.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🌞</div><div><strong>Vacances Actives — sport, culture, loisirs</strong><span>Des activités accessibles à tous les enfants chaque vacances scolaires.</span></div></div>
+      <div class="result-item"><div class="ri-icon">💡</div><div><strong>Éclairage sécurisé le soir</strong><span>Votre quartier est éclairé. Vos enfants rentrent dans des rues visibles et sûres.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🍼</div><div><strong>Plus de places en crèche, horaires élargis</strong><span>Votre reprise du travail est facilitée. Des horaires adaptés à votre réalité.</span></div></div>
+      <div class="result-item"><div class="ri-icon">♿</div><div><strong>Inclusion totale des enfants handicapés</strong><span>Chaque enfant de Vesoul a sa place, accompagné et reconnu.</span></div></div>
+    </div>
+    <div class="sim-email-block">
+      <p>Recevoir le programme complet pour les familles ?</p>
+      <div class="sim-email-row">
+        <input type="email" class="sim-email" placeholder="votre@email.fr" autocomplete="email">
+        <button onclick="submitSimEmail(this)">Envoyer</button>
+      </div>
+      <small>Facultatif. Aucun spam, aucune inscription requise.</small>
+      <div class="sim-confirm">✅ Merci ! Nous vous enverrons le programme familles.</div>
+    </div>
+  </div>
+
+  <!-- RETRAITE -->
+  <div class="profile-result" id="result-retraite">
+    <h3>🧓 Concrètement, voici ce qui changera pour vous.</h3>
+    <div class="result-items">
+      <div class="result-item"><div class="ri-icon">🏥</div><div><strong>Des médecins et spécialistes accessibles à Vesoul</strong><span>Accompagnement à l'installation, locaux mis à disposition. Consulter près de chez vous devient réel.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🚐</div><div><strong>Navette électrique gratuite</strong><span>Marché, médecin, centre-ville : sans voiture, sans dépendre de quelqu'un.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🪑</div><div><strong>Trottoirs accessibles, bancs partout</strong><span>Se promener redevient un plaisir, pas un parcours du combattant.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🚨</div><div><strong>Tranquillité publique renforcée</strong><span>Médiateurs, police présente le soir, vidéoprotection modernisée. Vous sortez sans appréhension.</span></div></div>
+      <div class="result-item"><div class="ri-icon">❤️</div><div><strong>Objectif zéro senior isolé</strong><span>Un réseau de voisinage, des visites régulières, un numéro dédié. Personne ne reste seul à Vesoul.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🎫</div><div><strong>Guichet unique — plus de labyrinthe administratif</strong><span>Un seul endroit pour toutes vos démarches. Déplacements inutiles supprimés.</span></div></div>
+    </div>
+    <div class="sim-email-block">
+      <p>Recevoir le programme pour les seniors ?</p>
+      <div class="sim-email-row"><input type="email" class="sim-email" placeholder="votre@email.fr"><button onclick="submitSimEmail(this)">Envoyer</button></div>
+      <small>Facultatif. Aucun spam.</small>
+      <div class="sim-confirm">✅ Merci ! Nous vous enverrons le programme seniors.</div>
+    </div>
+  </div>
+
+  <!-- COMMERCANT -->
+  <div class="profile-result" id="result-commercant">
+    <h3>🛍️ Concrètement, voici ce qui changera pour vous.</h3>
+    <div class="result-items">
+      <div class="result-item"><div class="ri-icon">🎪</div><div><strong>Animations et événements toute l'année</strong><span>Un agenda construit avec les commerçants. Du monde dans les rues, des clients dans votre boutique.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🏪</div><div><strong>Guichet unique commerçants et artisans</strong><span>Un seul interlocuteur pour toutes vos démarches. Fini le labyrinthe administratif.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🅿️</div><div><strong>Stationnement optimisé pour vos clients</strong><span>Plan de circulation repensé. Vos clients trouvent une place, ils s'arrêtent chez vous.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🛡️</div><div><strong>Sécurité et propreté du centre-ville</strong><span>Médiateurs, vidéoprotection, interventions rapides sur les dégradations. Un centre apaisé.</span></div></div>
+      <div class="result-item"><div class="ri-icon">💳</div><div><strong>Carte avantages locaux</strong><span>Vos clients ont une raison de vous choisir plutôt qu'une enseigne de périphérie.</span></div></div>
+      <div class="result-item"><div class="ri-icon">📉</div><div><strong>Fiscalité stabilisée</strong><span>Engagement de stabilité fiscale. Vous pouvez planifier sans mauvaise surprise.</span></div></div>
+    </div>
+    <div class="sim-email-block">
+      <p>Recevoir le programme pour les commerçants ?</p>
+      <div class="sim-email-row"><input type="email" class="sim-email" placeholder="votre@email.fr"><button onclick="submitSimEmail(this)">Envoyer</button></div>
+      <small>Facultatif. Aucun spam.</small>
+      <div class="sim-confirm">✅ Merci ! Nous vous enverrons le programme commerçants.</div>
+    </div>
+  </div>
+
+  <!-- ETUDIANT -->
+  <div class="profile-result" id="result-etudiant">
+    <h3>🎓 Concrètement, voici ce qui changera pour vous.</h3>
+    <div class="result-items">
+      <div class="result-item"><div class="ri-icon">🏠</div><div><strong>Logements T1/T2 accessibles en centre-ville</strong><span>Un plan logement spécifique pour que rester à Vesoul soit un choix, pas un sacrifice.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🚲</div><div><strong>Mobilité libre sans voiture</strong><span>Vélos en libre-service, navettes, pistes cyclables. Vous bougez sans dépendre d'une voiture.</span></div></div>
+      <div class="result-item"><div class="ri-icon">💻</div><div><strong>Campus 3.0 — espaces de travail et numérique</strong><span>Des espaces pour étudier, coder, créer. Pensés pour vous, pas pour les générations précédentes.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🚨</div><div><strong>Sécurité renforcée le soir et le week-end</strong><span>Vous sortez sans appréhension. Le trajet retour n'est plus un problème.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🎟️</div><div><strong>Pass Sport & Culture municipal</strong><span>Accès à tarif réduit aux équipements sportifs et culturels. Vesoul à portée de main.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🎓</div><div><strong>Formations et métiers d'avenir accessibles</strong><span>Des parcours de formation disponibles localement. Votre carrière peut se construire ici.</span></div></div>
+    </div>
+    <div class="sim-email-block">
+      <p>Recevoir le programme pour les étudiants ?</p>
+      <div class="sim-email-row"><input type="email" class="sim-email" placeholder="votre@email.fr"><button onclick="submitSimEmail(this)">Envoyer</button></div>
+      <small>Facultatif. Aucun spam.</small>
+      <div class="sim-confirm">✅ Merci ! Nous vous enverrons le programme étudiants.</div>
+    </div>
+  </div>
+
+  <!-- SALARIE -->
+  <div class="profile-result" id="result-salarie">
+    <h3>💼 Concrètement, voici ce qui changera pour vous.</h3>
+    <div class="result-items">
+      <div class="result-item"><div class="ri-icon">🗺️</div><div><strong>Circulation repensée et fluidifiée</strong><span>Un plan de circulation concerté. Moins de bouchons, moins de stress en allant au travail.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🅿️</div><div><strong>Stationnement optimisé</strong><span>Vous trouvez une place. Finis les tours de ville inutiles avant de prendre votre poste.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🍼</div><div><strong>Garde d'enfants facilitée</strong><span>Plus de places en crèche, horaires élargis. Vous partez travailler l'esprit tranquille.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🛍️</div><div><strong>Commerces accessibles et vivants</strong><span>Un centre-ville qui vit aussi en semaine. Vos courses sont possibles après le travail.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🏥</div><div><strong>Médecins de proximité à Vesoul</strong><span>Plus besoin de traverser la Haute-Saône pour un rendez-vous. Les spécialistes reviennent.</span></div></div>
+    </div>
+    <div class="sim-email-block">
+      <p>Recevoir le programme pour les salariés ?</p>
+      <div class="sim-email-row"><input type="email" class="sim-email" placeholder="votre@email.fr"><button onclick="submitSimEmail(this)">Envoyer</button></div>
+      <small>Facultatif. Aucun spam.</small>
+      <div class="sim-confirm">✅ Merci ! Nous vous enverrons le programme salariés.</div>
+    </div>
+  </div>
+
+  <!-- JEUNE ACTIF -->
+  <div class="profile-result" id="result-jeune">
+    <h3>🚀 Concrètement, voici ce qui changera pour vous.</h3>
+    <div class="result-items">
+      <div class="result-item"><div class="ri-icon">🚀</div><div><strong>Soutien concret à l'entrepreneuriat</strong><span>Accompagnement, locaux disponibles, lien renforcé avec la mission locale. Créer ici devient possible.</span></div></div>
+      <div class="result-item"><div class="ri-icon">💻</div><div><strong>Campus 3.0 — coworking et numérique</strong><span>Espaces de travail modernes en centre-ville. Votre projet professionnel grandit à Vesoul.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🏠</div><div><strong>Aides à l'installation sur le territoire</strong><span>Des dispositifs pour faciliter votre premier logement. Rester n'est plus un sacrifice.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🎵</div><div><strong>Vie culturelle et événements toute l'année</strong><span>Concerts, festivals, sorties. Vesoul devient une ville où il se passe vraiment quelque chose.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🚲</div><div><strong>Mobilité sans voiture</strong><span>Vélos, navettes, pistes cyclables sécurisées. Vous bougez librement sans budget carburant.</span></div></div>
+    </div>
+    <div class="sim-email-block">
+      <p>Recevoir le programme pour les jeunes actifs ?</p>
+      <div class="sim-email-row"><input type="email" class="sim-email" placeholder="votre@email.fr"><button onclick="submitSimEmail(this)">Envoyer</button></div>
+      <small>Facultatif. Aucun spam.</small>
+      <div class="sim-confirm">✅ Merci ! Nous vous enverrons le programme jeunes actifs.</div>
+    </div>
+  </div>
+
+  <!-- ASSOCIATION -->
+  <div class="profile-result" id="result-asso">
+    <h3>🌐 Concrètement, voici ce qui changera pour vous.</h3>
+    <div class="result-items">
+      <div class="result-item"><div class="ri-icon">🏛️</div><div><strong>Maison des associations rénovée et connectée</strong><span>Un espace digne et fonctionnel. Votre association a un foyer à la hauteur de son engagement.</span></div></div>
+      <div class="result-item"><div class="ri-icon">📋</div><div><strong>Subventions lisibles, critères transparents</strong><span>Vous savez à quoi vous attendre. Fini le saupoudrage aléatoire et les décisions inexpliquées.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🗓️</div><div><strong>Agenda co-construit avec la mairie</strong><span>Vos événements sont intégrés au calendrier municipal. La mairie vous soutient activement.</span></div></div>
+      <div class="result-item"><div class="ri-icon">📑</div><div><strong>Démarches entièrement simplifiées</strong><span>Réservation de salles, autorisations : tout en ligne, rapide, sans paperasse excessive.</span></div></div>
+      <div class="result-item"><div class="ri-icon">🔨</div><div><strong>Chantiers participatifs avec la ville</strong><span>Vous proposez, vous co-réalisez avec la mairie. Vos initiatives transforment concrètement Vesoul.</span></div></div>
+    </div>
+    <div class="sim-email-block">
+      <p>Recevoir le programme pour les associations ?</p>
+      <div class="sim-email-row"><input type="email" class="sim-email" placeholder="votre@email.fr"><button onclick="submitSimEmail(this)">Envoyer</button></div>
+      <small>Facultatif. Aucun spam.</small>
+      <div class="sim-confirm">✅ Merci ! Nous vous enverrons le programme associations.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CARTE INTERACTIVE -->
+<section class="carte-section" id="carte">
+  <div class="reveal">
+    <div class="section-label">Votre quartier</div>
+    <h2 class="section-title">Notre projet, rue par rue.</h2>
+    <p class="section-sub">Vesoul est découpée en quartiers, et chacun a ses priorités. Cliquez sur votre secteur pour découvrir les mesures concrètes qui vous concernent directement.</p>
+  </div>
+
+  <div class="carte-wrapper reveal">
+    <!-- SVG CARTE VESOUL -->
+    <div class="carte-svg-container">
+                        <svg class="carte-svg" viewBox="0 0 560 500" xmlns="http://www.w3.org/2000/svg"
+           role="img" aria-label="Carte interactive de Vesoul par quartiers">
+
+        <!-- Fond -->
+        <rect x="0" y="0" width="560" height="500" fill="#f0f4fb" rx="16"/>
+
+        <!-- Contour global ville -->
+        <polygon points="55,55 130,28 205,22 285,28 365,38 435,55 505,82 532,132 536,202 520,272 498,332 468,392 418,442 338,472 258,482 178,472 108,442 62,392 32,322 22,242 32,162 55,55"
+          fill="rgba(26,58,107,0.04)" stroke="rgba(26,58,107,0.13)" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+        <!-- 1. ZONE TECHNOLOGIA — nord-ouest -->
+        <polygon class="quartier-zone" id="q-technologia" onclick="selectQuartier('technologia')"
+          points="22,22 168,22 182,85 142,125 85,132 35,110 22,72"/>
+        <text class="quartier-label" x="98" y="72" font-size="9">Zone</text>
+        <text class="quartier-label" x="98" y="85" font-size="9">Technologia</text>
+
+        <!-- 2. GRAND GRÉSIL — nord centre -->
+        <polygon class="quartier-zone" id="q-gresil" onclick="selectQuartier('gresil')"
+          points="182,85 168,22 285,18 372,35 395,95 362,125 298,135 252,118 230,96"/>
+        <text class="quartier-label" x="302" y="92" font-size="9.5">Grand</text>
+        <text class="quartier-label" x="302" y="105" font-size="9.5">Grésil</text>
+
+        <!-- 3. LES RÊPES — nord-est -->
+        <polygon class="quartier-zone" id="q-repes" onclick="selectQuartier('repes')"
+          points="395,95 372,35 465,50 535,85 538,165 498,188 458,183 418,163 388,132 362,125"/>
+        <text class="quartier-label" x="468" y="148" font-size="9.5">Les</text>
+        <text class="quartier-label" x="468" y="161" font-size="9.5">Rêpes</text>
+
+        <!-- 4. ESPACE VILLON — est -->
+        <polygon class="quartier-zone" id="q-villon" onclick="selectQuartier('villon')"
+          points="362,125 388,132 418,163 458,183 485,235 465,275 425,285 385,268 355,238 342,192 298,135"/>
+        <text class="quartier-label" x="415" y="220" font-size="9.5">Espace</text>
+        <text class="quartier-label" x="415" y="233" font-size="9.5">Villon</text>
+
+        <!-- 5. JEAN-JAURÈS — centre-gauche + ouest -->
+        <polygon class="quartier-zone" id="q-jaures" onclick="selectQuartier('jaures')"
+          points="85,132 142,125 182,85 230,96 252,118 242,155 208,178 208,252 185,265 155,265 118,255 88,245 72,238 42,195 52,152 72,132"/>
+        <text class="quartier-label" x="148" y="200" font-size="9.5">Jean-</text>
+        <text class="quartier-label" x="148" y="213" font-size="9.5">Jaurès</text>
+
+        <!-- 6. CENTRE-VILLE — cœur -->
+        <polygon class="quartier-zone" id="q-centre" onclick="selectQuartier('centre')"
+          points="208,178 242,155 298,135 342,192 355,238 325,268 285,278 248,272 215,252 208,220"/>
+        <text class="quartier-label" x="282" y="228" font-size="10">Centre-</text>
+        <text class="quartier-label" x="282" y="241" font-size="10">Ville</text>
+
+        <!-- 7. MONTMARIN — sud-est -->
+        <polygon class="quartier-zone" id="q-montmarin" onclick="selectQuartier('montmarin')"
+          points="425,285 465,275 508,298 525,360 495,405 448,418 408,393 392,348 382,303 385,268"/>
+        <text class="quartier-label" x="454" y="352" font-size="9.5">Montmarin</text>
+
+        <!-- 8. LA MOTTE — centre-sud -->
+        <polygon class="quartier-zone" id="q-motte" onclick="selectQuartier('motte')"
+          points="162,288 185,278 215,252 248,272 285,278 275,322 245,348 205,353 168,338 148,308 155,282"/>
+        <text class="quartier-label" x="215" y="312" font-size="9.5">La Motte</text>
+
+
+        <!-- 10. STADE GERLINGEN — sud-ouest -->
+        <polygon class="quartier-zone" id="q-stade" onclick="selectQuartier('stade')"
+          points="88,245 118,255 155,265 162,288 148,308 112,328 75,318 42,295 42,262 72,238"/>
+        <text class="quartier-label" x="100" y="285" font-size="9">Stade</text>
+        <text class="quartier-label" x="100" y="298" font-size="9">Gerlingen</text>
+
+        <!-- 9. LES HABERGES — grand sud -->
+        <polygon class="quartier-zone" id="q-haberges" onclick="selectQuartier('haberges')"
+          points="112,328 148,308 162,288 185,265 215,252 248,272 285,278 275,322 315,338 325,388 300,433 248,453 192,448 148,418 108,387 65,358 42,308 42,295 75,318"/>
+        <text class="quartier-label" x="215" y="408" font-size="9.5">Les</text>
+        <text class="quartier-label" x="215" y="421" font-size="9.5">Haberges</text>
+
+        <!-- Zone de jonction Haberges-Montmarin -->
+        <polygon points="315,338 325,268 355,238 385,268 392,348 408,393 372,422 325,437 300,433 325,388"
+          fill="rgba(74,128,212,0.05)" stroke="rgba(26,58,107,0.07)" stroke-width="1"/>
+
+        <!-- Rivière la Lanterne -->
+        <path d="M 42 320 Q 100 345 162 350 Q 225 355 288 345 Q 350 335 412 328 Q 462 322 512 314"
+          fill="none" stroke="#4a80d4" stroke-width="2.5" stroke-dasharray="7,4" opacity="0.5"/>
+        <text x="282" y="373" font-size="9" fill="#4a80d4" text-anchor="middle"
+              font-style="italic" opacity="0.72">La Lanterne</text>
+
+        <!-- Points GPS centre de chaque quartier -->
+        <circle cx="282" cy="225" r="4.5" fill="var(--gold)" opacity="0.8" pointer-events="none"/>
+        <circle cx="468" cy="155" r="4.5" fill="var(--gold)" opacity="0.8" pointer-events="none"/>
+        <circle cx="454" cy="340" r="4.5" fill="var(--gold)" opacity="0.8" pointer-events="none"/>
+        <circle cx="215" cy="408" r="4.5" fill="var(--gold)" opacity="0.8" pointer-events="none"/>
+        <circle cx="148" cy="205" r="4.5" fill="var(--gold)" opacity="0.8" pointer-events="none"/>
+        <circle cx="302" cy="96" r="4.5" fill="var(--gold)" opacity="0.8" pointer-events="none"/>
+        <circle cx="415" cy="225" r="4.5" fill="var(--gold)" opacity="0.8" pointer-events="none"/>
+        <circle cx="215" cy="310" r="4.5" fill="var(--gold)" opacity="0.8" pointer-events="none"/>
+        <circle cx="98" cy="76" r="4.5" fill="var(--gold)" opacity="0.8" pointer-events="none"/>
+        <circle cx="95" cy="285" r="4.5" fill="var(--gold)" opacity="0.8" pointer-events="none"/>
+
+        <!-- Rose des vents -->
+        <g transform="translate(522, 456)">
+          <circle cx="0" cy="0" r="18" fill="white" stroke="rgba(26,58,107,0.15)" stroke-width="1"/>
+          <text x="0" y="-5" text-anchor="middle" font-size="9" font-weight="700" fill="#1a3a6b">N</text>
+          <polygon points="0,-14 3,-4 -3,-4" fill="#1a3a6b"/>
+          <polygon points="0,14 3,4 -3,4" fill="rgba(26,58,107,0.22)"/>
+        </g>
+
+        <!-- Légende -->
+        <rect x="12" y="471" width="13" height="13" fill="rgba(26,58,107,0.12)" stroke="#1a3a6b" stroke-width="1.2" rx="2"/>
+        <text x="30" y="481" font-size="9.5" fill="#5a6a80" font-family="Sora,sans-serif">Cliquer sur un quartier</text>
+        <rect x="202" y="471" width="13" height="13" fill="rgba(240,165,0,0.4)" stroke="#f0a500" stroke-width="1.8" rx="2"/>
+        <text x="220" y="481" font-size="9.5" fill="#5a6a80" font-family="Sora,sans-serif">Sélectionné</text>
+      </svg>
+      <p class="carte-instruction">👆 Cliquez sur votre quartier pour voir les projets qui vous concernent</p>
+    </div>
+
+    <!-- PANEL LATÉRAL -->
+    <div class="carte-panel" id="carte-panel">
+      <div class="carte-panel-empty" id="panel-empty">
+        <div class="cp-icon">📍</div>
+        <p>Sélectionnez votre quartier sur la carte pour découvrir les projets prévus près de chez vous.</p>
+      </div>
+
+      <div class="carte-panel-content" id="panel-content">
+        <div class="cp-quartier-name" id="cp-name">—</div>
+        <div class="cp-subtitle">Notre projet pour votre quartier</div>
+        <div class="cp-measures" id="cp-measures-list"></div>
+
+        <button class="cp-signal-btn" onclick="toggleSignalForm()">
+          📢 Signaler une priorité dans mon quartier
+        </button>
+        <div class="cp-signal-form" id="signal-form">
+          <select id="signal-cat">
+            <option value="">— Catégorie du problème —</option>
+            <option value="securite">🛡️ Sécurité / incivilités</option>
+            <option value="voirie">🔧 Voirie / trottoirs</option>
+            <option value="eclairage">💡 Éclairage public</option>
+            <option value="proprete">🧹 Propreté / déchets</option>
+            <option value="stationnement">🅿️ Stationnement</option>
+            <option value="espaces-verts">🌳 Espaces verts</option>
+            <option value="equipements">🏗️ Équipements sportifs / culturels</option>
+            <option value="autre">💬 Autre</option>
+          </select>
+          <textarea id="signal-comment" placeholder="Décrivez brièvement le problème (ex : lampadaire éteint rue X depuis 3 mois)…" maxlength="300"></textarea>
+          <button class="cp-signal-submit" onclick="submitSignal()">📨 Envoyer mon signalement</button>
+          <div class="cp-signal-confirm" id="signal-confirm">
+            ✅ Merci ! Votre signalement a été pris en compte. Nous y répondrons lors des permanences de quartier.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENCE -->
+<section class="transparence" id="transparence">
+  <div class="reveal">
+    <div class="section-label">Notre engagement</div>
+    <h2 class="section-title">Une équipe qui rend des comptes.</h2>
+    <p class="section-sub">La transparence n'est pas un mot de communication. C'est une façon de travailler. Voici comment nous nous engageons à gouverner.</p>
+  </div>
+  <div class="trans-grid reveal">
+    <div class="trans-card reveal-delay-1">
+      <div class="trans-icon">🗣️</div>
+      <h3>Concertation permanente</h3>
+      <p>Des réunions de quartier régulières, une plateforme de suggestion en ligne avec mise à l'ordre du jour automatique des propositions plébiscitées. Vous décidez avec nous — vraiment.</p>
+    </div>
+    <div class="trans-card reveal-delay-2">
+      <div class="trans-icon">📊</div>
+      <h3>Budget lisible, stabilité fiscale, désendettement</h3>
+      <p>Rapports financiers publiés régulièrement, engagement de stabilité fiscale et réduction progressive de l'endettement. Chaque euro expliqué, en langage clair — pas en jargon technocratique.</p>
+    </div>
+    <div class="trans-card reveal-delay-3">
+      <div class="trans-icon">📞</div>
+      <h3>Élu référent par quartier + cafés citoyens</h3>
+      <p>Un élu de quartier joignable, des permanences régulières et des cafés citoyens trimestriels pour échanger librement. Vous avez un problème ou une idée, quelqu'un vous écoute — vraiment.</p>
+    </div>
+    <div class="trans-card reveal-delay-1">
+      <div class="trans-icon">📺</div>
+      <h3>Conseils municipaux diffusés en direct</h3>
+      <p>Tous les conseils municipaux retransmis en ligne, suivis de séances de questions-réponses. La démocratie locale se vit, elle ne se résume pas à un vote tous les six ans.</p>
+    </div>
+    <div class="trans-card reveal-delay-2">
+      <div class="trans-icon">🗳️</div>
+      <h3>Référendum local pour les grands projets</h3>
+      <p>Sur les décisions structurantes qui engagent Vesoul pour des décennies, les habitants seront consultés. Un mandat, ce n'est pas un blanc-seing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MINI JEU QUIZ -->
+<section class="minijeu" id="quiz">
+  <div class="reveal">
+    <div class="section-label" style="color: var(--gold);">Le quiz amusant</div>
+    <h2 class="section-title" style="text-align:center">Quel Vésulien êtes-vous ?</h2>
+    <p class="section-sub" style="max-width:500px; margin:0 auto 40px; text-align:center; color:rgba(255,255,255,0.7)">3 questions, 30 secondes. Découvrez votre profil et les mesures qui vous correspondent. Et faites-le faire à vos amis 😄</p>
+  </div>
+
+  <div class="quiz-container reveal">
+    <div class="quiz-progress">
+      <div class="prog-dot" id="dot-0"></div>
+      <div class="prog-dot" id="dot-1"></div>
+      <div class="prog-dot" id="dot-2"></div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="quiz-step active" id="q1">
+      <div class="quiz-question">Samedi matin à Vesoul, vous êtes plutôt…</div>
+      <div class="quiz-options">
+        <button class="quiz-opt" onclick="answer(0, 'parent')" ><span class="opt-emoji">☕</span> En train de préparer les sacs des enfants pour le foot à 8h30</button>
+        <button class="quiz-opt" onclick="answer(0, 'jeune')"><span class="opt-emoji">😴</span> En train de dormir jusqu'à midi (logiquement)</button>
+        <button class="quiz-opt" onclick="answer(0, 'senior')"><span class="opt-emoji">🥖</span> Au marché, café en main, depuis 7h</button>
+        <button class="quiz-opt" onclick="answer(0, 'commercant')"><span class="opt-emoji">🔑</span> À ouvrir votre boutique en espérant du passage</button>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="quiz-step" id="q2">
+      <div class="quiz-question">Ce qui vous énerve le plus à Vesoul en ce moment…</div>
+      <div class="quiz-options">
+        <button class="quiz-opt" onclick="answer(1, 'securite')"><span class="opt-emoji">😠</span> L'insécurité et les trottoirs défoncés</button>
+        <button class="quiz-opt" onclick="answer(1, 'vie')"><span class="opt-emoji">😔</span> Il ne se passe rien, les jeunes partent tous</button>
+        <button class="quiz-opt" onclick="answer(1, 'mobilite')"><span class="opt-emoji">🚗</span> Impossible de se déplacer sans voiture</button>
+        <button class="quiz-opt" onclick="answer(1, 'admin')"><span class="opt-emoji">📑</span> Les démarches en mairie : un cauchemar</button>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="quiz-step" id="q3">
+      <div class="quiz-question">Votre rêve pour Vesoul dans 5 ans ?</div>
+      <div class="quiz-options">
+        <button class="quiz-opt" onclick="answer(2, 'ecoles')"><span class="opt-emoji">🏫</span> Des écoles au top et des enfants qui s'épanouissent</button>
+        <button class="quiz-opt" onclick="answer(2, 'culture')"><span class="opt-emoji">🎭</span> Un centre-ville vivant, des concerts, des festivals</button>
+        <button class="quiz-opt" onclick="answer(2, 'solidarite')"><span class="opt-emoji">🤝</span> Une ville solidaire, où personne n'est laissé de côté</button>
+        <button class="quiz-opt" onclick="answer(2, 'ecologie')"><span class="opt-emoji">🌳</span> Plus de nature, de vélos, de douceur urbaine</button>
+      </div>
+    </div>
+
+    <!-- RÉSULTAT -->
+    <div class="quiz-result" id="quiz-result">
+      <div class="profile-badge" id="qr-badge">🏠</div>
+      <div class="profile-title" id="qr-title">Votre profil</div>
+      <div class="profile-desc" id="qr-desc">Description</div>
+      <div class="quiz-measures" id="qr-measures"></div>
+      <button class="quiz-restart" onclick="restartQuiz()">🔄 Recommencer le quiz</button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="cta">
+  <div class="reveal">
+    <h2>Vesoul mérite mieux.<br>Ensemble, on y arrive.</h2>
+    <p>Rejoignez le mouvement. Parlez-en autour de vous. Votre voix compte.</p>
+    <a href="https://linktr.ee/anthonylouise2026" target="_blank" rel="noopener" class="cta-btn">
+      Rejoindre le mouvement pour Vesoul
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Ensemble pour Vesoul — Élections municipales 2026</strong><br>
+  Sécuriser · Soutenir · Simplifier · Redonner la vie<br>
+  <span style="font-size:0.75rem; opacity:0.5">Votre vote, c'est votre ville.</span>
+</footer>
+
+<script>
+  // ═══════════════════════════════════════════
+  // REVEAL ON SCROLL
+  // ═══════════════════════════════════════════
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => revealObs.observe(r));
+
+  // ═══════════════════════════════════════════
+  // COMPTE À REBOURS — modifier ELECTION_DATE pour changer la date cible
+  // ═══════════════════════════════════════════
+  const ELECTION_DATE = new Date('2026-03-15T08:00:00');  // ← MODIFIER ICI
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = ELECTION_DATE - now;
+
+    if (diff <= 0) {
+      document.getElementById('countdown-live').style.display = 'none';
+      document.getElementById('cd-expired-msg').style.display = 'block';
+      return;
+    }
+
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById('cd-days').textContent  = String(d).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+    document.getElementById('cd-mins').textContent  = String(m).padStart(2, '0');
+    document.getElementById('cd-secs').textContent  = String(s).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // ═══════════════════════════════════════════
+  // MODAL RAPPEL
+  // ═══════════════════════════════════════════
+  function openRappelModal() {
+    document.getElementById('rappel-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeRappelModal() {
+    document.getElementById('rappel-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('rappel-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeRappelModal();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeRappelModal();
+  });
+  function submitRappel() {
+    const email = document.getElementById('rappel-email').value;
+    if (!email || !email.includes('@')) {
+      document.getElementById('rappel-email').focus();
+      return;
+    }
+    document.querySelector('.modal-submit').style.display = 'none';
+    document.getElementById('rappel-confirm').style.display = 'block';
+    setTimeout(closeRappelModal, 3200);
+  }
+
+  // ═══════════════════════════════════════════
+  // PROGRAMME — ONGLETS
+  // ═══════════════════════════════════════════
+  function showTab(id) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.target.classList.add('active');
+    document.querySelectorAll('#tab-' + id + ' .reveal').forEach(r => {
+      r.classList.remove('visible');
+      setTimeout(() => r.classList.add('visible'), 60);
+    });
+  }
+
+  // ═══════════════════════════════════════════
+  // SIMULATEUR — PROFILS
+  // ═══════════════════════════════════════════
+  function showProfile(type, btn) {
+    document.querySelectorAll('.profile-result').forEach(r => r.classList.remove('show'));
+    document.querySelectorAll('.profile-btn').forEach(b => b.classList.remove('active'));
+    const el = document.getElementById('result-' + type);
+    if (el) { el.classList.add('show'); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    if (btn) btn.classList.add('active');
+    // active class already set via btn param
+  }
+
+  function submitSimEmail(btn) {
+    const block = btn.closest('.sim-email-block');
+    const emailInput = block.querySelector('.sim-email');
+    const confirm = block.querySelector('.sim-confirm');
+    if (!emailInput.value || !emailInput.value.includes('@')) { emailInput.focus(); return; }
+    btn.disabled = true;
+    btn.textContent = '✓';
+    confirm.style.display = 'block';
+  }
+
+  // ═══════════════════════════════════════════
+  // CARTE INTERACTIVE — DONNÉES PAR QUARTIER
+  // ═══════════════════════════════════════════
+  const quartiersData = {
+    centre: {
+      name: 'Centre-Ville / Vieux Vesoul',
+      measures: [
+        { icon: '🛡️', title: 'Sécurité renforcée — présence en soirée', desc: 'Médiateurs de proximité, vidéoprotection modernisée, police présente le soir et le week-end.' },
+        { icon: '🎪', title: 'Animations toute l\'année', desc: 'Carnaval relancé, marché nocturne élargi, événements co-construits avec les commerçants de la rue du Breuil et des rues piétonnes.' },
+        { icon: '🏪', title: 'Guichet unique commerçants', desc: 'Un seul interlocuteur municipal. Cellules commerciales rénovées, carte avantages locaux pour fidéliser les clients.' },
+        { icon: '🌳', title: 'Végétalisation et îlots de fraîcheur', desc: 'Plantations, mobilier urbain renouvelé, espaces ombragés place de la République.' },
+        { icon: '🔑', title: 'Logements vacants remis sur le marché', desc: 'T1/T2 pour jeunes et étudiants, T3/T4 pour familles. Le cœur de Vesoul qui se repeuple.' },
+        { icon: '🅿️', title: 'Plan stationnement et circulation', desc: 'Accès facilité pour les clients, flux repensés avec les riverains. Moins de double file, plus de fluidité.' }
+      ]
+    },
+    repes: {
+      name: 'Quartier des Rêpes',
+      measures: [
+        { icon: '👨‍👩‍👧', title: 'Quartier familial — espaces jeux rénovés', desc: 'Aires de jeux modernisées, espaces verts entretenus, mobilier urbain adapté aux enfants et familles.' },
+        { icon: '🚐', title: 'Navette interquartiers cadencée', desc: 'Liaison directe vers le centre-ville et les services. Fréquences adaptées aux horaires scolaires et professionnels.' },
+        { icon: '🏃', title: 'Parcours santé de proximité', desc: 'Circuit fitness aménagé autour de la maison de quartier des Rêpes. Accessible à tous les âges.' },
+        { icon: '💡', title: 'Éclairage LED modernisé', desc: 'Remplacement des candélabres vétustes. Un quartier bien éclairé où l\'on rentre sereinement le soir.' },
+        { icon: '📢', title: 'Café citoyen trimestriel', desc: 'Rencontres régulières avec l\'élu référent du quartier. Vos priorités intégrées au budget municipal.' }
+      ]
+    },
+    montmarin: {
+      name: 'Montmarin',
+      measures: [
+        { icon: '🏫', title: 'Collège Jacques-Brel — abords sécurisés', desc: 'Zones dépose-minute aménagées, passages piétons rénovés, ralentisseurs aux entrées du collège.' },
+        { icon: '🚲', title: 'Piste cyclable sécurisée vers le centre', desc: 'Liaison continue et séparée depuis le secteur pavillonnaire jusqu\'au cœur de ville.' },
+        { icon: '🌳', title: 'Espaces verts du secteur pavillonnaire', desc: 'Entretien renforcé, nouvelles plantations, points d\'eau. Un cadre de vie soigné et verdoyant.' },
+        { icon: '🏠', title: 'Rénovation énergétique accompagnée', desc: 'Aide aux propriétaires du secteur pour isoler, réduire les factures et valoriser leur bien.' },
+        { icon: '📢', title: 'Élu référent de quartier joignable', desc: 'Permanence mensuelle dédiée à Montmarin. Vos signalements traités sous 48h.' }
+      ]
+    },
+    haberges: {
+      name: 'Les Haberges',
+      measures: [
+        { icon: '🏫', title: 'Sécurisation des écoles du quartier', desc: 'Abords sécurisés, zones dépose-minute, traversées matinales encadrées. Vos enfants arrivent sereinement.' },
+        { icon: '⚽', title: 'Gymnase des Haberges rénové', desc: 'Vestiaires modernisés, terrain remis à niveau, accès amélioré pour les associations sportives locales.' },
+        { icon: '🚐', title: 'Transport adapté seniors et PMR', desc: 'Service de mobilité dédié, sur réservation simple, pour les personnes à mobilité réduite du quartier.' },
+        { icon: '🛡️', title: 'Présence policière renforcée', desc: 'Rondes étendues aux soirées, médiateurs de proximité dans ce grand quartier résidentiel.' },
+        { icon: '🌿', title: 'Cours d\'école végétalisées', desc: 'Des zones d\'ombre et de fraîcheur dans les cours. Fini le béton brûlant pour vos enfants l\'été.' },
+        { icon: '💡', title: 'Éclairage des cheminements piétons', desc: 'Les liaisons entre immeubles, arrêts de bus et équipements éclairées en priorité.' }
+      ]
+    },
+    jaures: {
+      name: 'Quartier Jean-Jaurès',
+      measures: [
+        { icon: '🛡️', title: 'Sécurité de l\'axe Jean-Jaurès', desc: 'Médiateurs, vidéoprotection aux carrefours stratégiques, présence policière en soirée sur l\'avenue.' },
+        { icon: '🚶', title: 'Trottoirs rénovés, mobilité piétonne', desc: 'Marquage au sol refait, trottoirs accessibles poussettes et fauteuils roulants sur tout l\'axe.' },
+        { icon: '🛍️', title: 'Commerce de proximité soutenu', desc: 'Guichet unique pour les commerçants de l\'avenue. Animations de quartier pour faire vivre l\'axe.' },
+        { icon: '🏠', title: 'Mixité habitat + commerces valorisée', desc: 'Plan de revitalisation du tissu mixte : logements rénovés, rez-de-chaussée commerciaux dynamiques.' },
+        { icon: '🌳', title: 'Végétalisation de l\'avenue', desc: 'Plantations d\'arbres en alignement, bacs fleuris, îlots de fraîcheur sur Jean-Jaurès.' }
+      ]
+    },
+    gresil: {
+      name: 'Grand Grésil',
+      measures: [
+        { icon: '🏡', title: 'Quartier pavillonnaire — voirie remise à niveau', desc: 'Chaussées et trottoirs réparés, marquages refaits. Un quartier nord qui retrouve un cadre propre.' },
+        { icon: '🌳', title: 'Espaces verts de la zone nord', desc: 'Entretien régulier, nouvelles plantations, parcours de promenade aménagé pour les résidents.' },
+        { icon: '🚐', title: 'Navette nord vers le centre', desc: 'Liaison régulière et cadencée depuis le Grand Grésil vers le centre-ville et la gare.' },
+        { icon: '🛡️', title: 'Tranquillité du secteur résidentiel', desc: 'Présence préventive, éclairage renforcé, intervention rapide sur les signalements.' },
+        { icon: '📢', title: 'Café citoyen nord trimestriel', desc: 'Réunion de quartier pour les secteurs nord. Vos priorités débattues et intégrées au budget.' }
+      ]
+    },
+    villon: {
+      name: 'Espace Villon',
+      measures: [
+        { icon: '🏢', title: 'Habitat collectif — entretien des abords', desc: 'Espaces communs valorisés, cheminements entre immeubles sécurisés, mobilier urbain renouvelé.' },
+        { icon: '🛡️', title: 'Sécurité résidentielle renforcée', desc: 'Vidéoprotection modernisée, rondes nocturnes, médiation de proximité dans le secteur collectif.' },
+        { icon: '🏃', title: 'Aire sportive et espace détente', desc: 'Terrain multisports, bancs, zones de détente autour de l\'Espace Villon. Un lieu de vie partagé.' },
+        { icon: '🚐', title: 'Desserte renforcée par navette', desc: 'Connexion directe vers le centre-ville, la gare et les équipements scolaires et médicaux.' },
+        { icon: '🤝', title: 'Services de proximité accessibles', desc: 'Guichet unique mobile, permanences sociales dans le quartier. Les services viennent à vous.' }
+      ]
+    },
+    motte: {
+      name: 'Colline de la Motte',
+      measures: [
+        { icon: '🏛️', title: 'Chapelle de la Motte — valorisation patrimoniale', desc: 'Réhabilitation du site, parcours historique, signalétique patrimoniale. Le patrimoine de Vesoul mis en valeur.' },
+        { icon: '🌿', title: 'Promenade et sentiers entretenus', desc: 'Cheminements pédestres remis en état, balisage amélioré, bancs et points de repos sur la colline.' },
+        { icon: '🎨', title: 'Parcours culturel et artistique', desc: 'Intégration d\'œuvres, fresques et sculptures sur le parcours de la Motte. L\'art dans la nature.' },
+        { icon: '🚲', title: 'Accès vélo à la colline', desc: 'Voie cyclable douce d\'accès depuis le centre-ville. La Motte accessible sans voiture.' },
+        { icon: '📸', title: 'Site photo et point de vue valorisé', desc: 'Aménagement du point de vue panoramique sur Vesoul. Un atout touristique et citoyen.' }
+      ]
+    },
+    stade: {
+      name: 'Stade Gerlingen',
+      measures: [
+        { icon: '⚽', title: 'Stade René-Hologne — rénovation et accès', desc: 'Mise à niveau des équipements sportifs, vestiaires rénovés, signalétique et accès améliorés. Vesoul sport au top.' },
+        { icon: '🏃', title: 'Zone sportive ouverte à tous', desc: 'Parcours fitness, terrain multisports en accès libre. Le sport de proximité pour tous les habitants du secteur.' },
+        { icon: '🚲', title: 'Accès cyclable sécurisé au stade', desc: 'Piste cyclable reliant le quartier au stade et aux équipements. Vous venez à pied ou à vélo en toute sécurité.' },
+        { icon: '💡', title: 'Éclairage des abords du stade', desc: 'Les accès et parkings éclairés pour les entraînements et événements en soirée.' },
+        { icon: '📢', title: 'Concertation avec les clubs locaux', desc: 'Un interlocuteur dédié aux associations sportives pour les créneaux, les subventions et les projets.' },
+        { icon: '🌳', title: 'Espaces verts et détente autour du stade', desc: 'Aménagement paysager autour de l\'équipement, bancs, zones de pique-nique pour les familles.' }
+      ]
+    },
+    technologia: {
+      name: 'Zone Technologia',
+      measures: [
+        { icon: '🏗️', title: 'Attractivité des zones d\'activités', desc: 'Accompagnement à l\'installation d\'entreprises, coworking, signalétique modernisée vers la zone.' },
+        { icon: '🚛', title: 'Gestion des flux poids lourds', desc: 'Itinéraires adaptés pour préserver les quartiers résidentiels adjacents des nuisances de transit.' },
+        { icon: '💡', title: 'Éclairage des accès et parkings', desc: 'Les axes d\'entrée et les zones de parking éclairés pour les horaires décalés et soirées.' },
+        { icon: '🚲', title: 'Mobilité douce vers la zone', desc: 'Piste cyclable depuis le centre-ville. Venir travailler à vélo sans risque, même aux horaires décalés.' },
+        { icon: '☀️', title: 'Panneaux solaires sur toitures industrielles', desc: 'Programme d\'équipement photovoltaïque avec les entreprises. Énergie locale, économies partagées.' },
+        { icon: '🚀', title: 'Soutien à l\'emploi et aux créateurs', desc: 'Lien avec la mission locale, espaces de coworking, accompagnement des jeunes entrepreneurs de la zone.' }
+      ]
+    }
+  };
+
+  let selectedQuartier = null;
+
+  function selectQuartier(id) {
+    // Reset previous selection
+    document.querySelectorAll('.quartier-zone').forEach(z => z.classList.remove('selected'));
+
+    const data = quartiersData[id];
+    if (!data) return;
+
+    selectedQuartier = id;
+    document.getElementById('q-' + id).classList.add('selected');
+    document.getElementById('panel-empty').style.display = 'none';
+
+    // Build measures HTML
+    const measuresHtml = data.measures.map(m => `
+      <div class="cp-measure">
+        <div class="cp-micon">${m.icon}</div>
+        <div class="cp-mtext"><strong>${m.title}</strong>${m.desc}</div>
+      </div>
+    `).join('');
+
+    document.getElementById('cp-name').textContent = data.name;
+    document.getElementById('cp-measures-list').innerHTML = measuresHtml;
+
+    // Reset signal form
+    document.getElementById('signal-form').classList.remove('show');
+    document.getElementById('signal-confirm').style.display = 'none';
+    document.getElementById('signal-cat').value = '';
+    document.getElementById('signal-comment').value = '';
+
+    const content = document.getElementById('panel-content');
+    content.classList.remove('show');
+    void content.offsetWidth; // force reflow
+    content.classList.add('show');
+
+    // On mobile, scroll to panel
+    if (window.innerWidth < 900) {
+      document.getElementById('carte-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function toggleSignalForm() {
+    document.getElementById('signal-form').classList.toggle('show');
+  }
+
+  function submitSignal() {
+    const cat = document.getElementById('signal-cat').value;
+    const comment = document.getElementById('signal-comment').value;
+    if (!cat) { document.getElementById('signal-cat').focus(); return; }
+    document.getElementById('signal-confirm').style.display = 'block';
+    document.querySelector('.cp-signal-submit').disabled = true;
+  }
+
+  // ═══════════════════════════════════════════
+  // QUIZ
+  // ═══════════════════════════════════════════
+  let quizScores = { parent: 0, retraite: 0, commercant: 0, etudiant: 0 };
+  let quizQ = 0;
+
+  const profileMap = {
+    parent: 'parent', jeune: 'etudiant', senior: 'retraite', commercant: 'commercant',
+    securite: 'parent', vie: 'etudiant', mobilite: 'retraite', admin: 'commercant',
+    ecoles: 'parent', culture: 'etudiant', solidarite: 'retraite', ecologie: 'etudiant'
+  };
+
+  const quizProfiles = {
+    parent: {
+      badge: '👨‍👩‍👧', title: 'Le Parent engagé de Vesoul',
+      desc: 'Vous jongler entre le boulot, les enfants et les activités avec une énergie remarquable. Vesoul peut — et doit — vous simplifier la vie.',
+      measures: [
+        { icon: '🏫', text: 'Abords des écoles sécurisés — votre enfant rentre seul, vous respirez' },
+        { icon: '📚', text: 'Étude surveillée jusqu\'à 18h — les devoirs, c\'est réglé' },
+        { icon: '🍽️', text: 'Cantine livrée à l\'école — plus de trajets bus inutiles' },
+        { icon: '🌳', text: 'Cours végétalisées — des enfants qui jouent dehors, au frais' }
+      ]
+    },
+    etudiant: {
+      badge: '🎓', title: 'Le Jeune Vésulien qui veut rester',
+      desc: 'Vous aimez Vesoul mais hésitez à partir. Pas parce que vous fuyez, mais parce que la ville ne vous donne pas encore assez de raisons de rester. Ça va changer.',
+      measures: [
+        { icon: '🚲', text: 'Vélos en libre-service — la liberté sans voiture' },
+        { icon: '💻', text: 'Campus 3.0 — espace de travail et numérique en centre-ville' },
+        { icon: '🎟️', text: 'Pass Sport & Culture municipal — Vesoul à portée de main' },
+        { icon: '🏠', text: 'Logements T1/T2 accessibles — rester est un vrai choix' }
+      ]
+    },
+    retraite: {
+      badge: '🧓', title: 'Le Vésulien de Cœur',
+      desc: 'Vous avez vu Vesoul grandir. Vous en connaissez chaque rue, chaque histoire. Vous méritez une ville qui prend soin de vous, qui ne vous oublie pas.',
+      measures: [
+        { icon: '🚐', text: 'Navette gratuite — marché, médecin, centre sans voiture' },
+        { icon: '🎫', text: 'Guichet unique — plus de labyrinthe administratif' },
+        { icon: '🪑', text: 'Trottoirs accessibles — marcher redevient un plaisir' },
+        { icon: '❤️', text: 'Réseau anti-isolement — vous n\'êtes jamais seul' }
+      ]
+    },
+    commercant: {
+      badge: '🛍️', title: 'Le Commerçant Courageux',
+      desc: 'Vous ouvrez chaque matin avec l\'espoir que la journée sera bonne. Vous aimez votre métier, votre rue, vos clients. Il est temps que la ville vous aide.',
+      measures: [
+        { icon: '🎪', text: 'Animations toute l\'année — du monde dans les rues' },
+        { icon: '💳', text: 'Carte avantages locaux — vos clients vous choisissent' },
+        { icon: '🏪', text: 'Guichet unique commerçants — fini le labyrinthe' },
+        { icon: '🅿️', text: 'Stationnement optimisé — vos clients trouvent une place' }
+      ]
+    }
+  };
+
+  window.answer = function(q, val) {
+    document.getElementById('dot-' + q).classList.add('done');
+    const mapped = profileMap[val] || 'parent';
+    if (quizScores[mapped] !== undefined) quizScores[mapped]++;
+    quizQ++;
+    document.querySelector('#q' + (q + 1))?.classList.remove('active');
+    if (quizQ < 3) {
+      document.querySelector('#q' + (quizQ + 1))?.classList.add('active');
+    } else {
+      showQuizResult();
+    }
+  };
+
+  function showQuizResult() {
+    let maxProfile = 'parent', max = -1;
+    for (let k in quizScores) {
+      if (quizScores[k] > max) { max = quizScores[k]; maxProfile = k; }
+    }
+    const p = quizProfiles[maxProfile];
+    document.getElementById('qr-badge').textContent = p.badge;
+    document.getElementById('qr-title').textContent = p.title;
+    document.getElementById('qr-desc').textContent = p.desc;
+    document.getElementById('qr-measures').innerHTML = p.measures.map(m =>
+      `<div class="qm-item"><span class="qm-icon">${m.icon}</span><span>${m.text}</span></div>`
+    ).join('');
+    document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('quiz-result').classList.add('show');
+  }
+
+  function restartQuiz() {
+    quizScores = { parent: 0, retraite: 0, commercant: 0, etudiant: 0 };
+    quizQ = 0;
+    document.getElementById('quiz-result').classList.remove('show');
+    document.querySelectorAll('.prog-dot').forEach(d => d.classList.remove('done'));
+    document.querySelector('#q1').classList.add('active');
+  }
+
+
+  // ═══════════════════════════════════════════
+  // QUIZ MODAL — MON PROGRAMME PERSONNALISÉ
+  // ═══════════════════════════════════════════
+
+  // Scoring weights per answer → programme themes
+  // Themes: securite, famille, mobilite, sante, logement, commerce, jeunesse, culture, ecologie, democratie
+  const pqWeights = {
+    // Q1 — Profil
+    parent:      { famille: 3, securite: 1, mobilite: 1 },
+    retraite:    { sante: 3, mobilite: 2, securite: 1 },
+    salarie:     { mobilite: 2, famille: 1, commerce: 1 },
+    jeune:       { jeunesse: 3, logement: 2, culture: 1 },
+    commercant:  { commerce: 3, securite: 1, mobilite: 1 },
+    // Q2 — Sécurité
+    securite_ecoles:  { securite: 3, famille: 2 },
+    securite_soir:    { securite: 3, culture: 1 },
+    securite_centre:  { securite: 2, commerce: 2 },
+    securite_route:   { securite: 2, mobilite: 2 },
+    securite_peu:     { democratie: 1 },
+    // Q3 — Mobilité
+    mobilite_voiture: { mobilite: 1 },
+    mobilite_pied:    { mobilite: 2, ecologie: 1 },
+    mobilite_velo:    { mobilite: 3, ecologie: 2 },
+    mobilite_navette: { mobilite: 3, sante: 1 },
+    mobilite_rien:    { mobilite: 3, sante: 2 },
+    // Q4 — Centre-ville
+    cv_souvent:     { commerce: 2, culture: 1 },
+    cv_peu:         { securite: 2, culture: 2, commerce: 1 },
+    cv_commercant:  { commerce: 3, securite: 1 },
+    cv_loin:        { mobilite: 2, logement: 1 },
+    // Q5 — Manques
+    manque_sante:   { sante: 3 },
+    manque_culture: { culture: 3, jeunesse: 1 },
+    manque_enfants: { famille: 3, jeunesse: 1 },
+    manque_emploi:  { jeunesse: 2, commerce: 2 },
+    manque_cadre:   { ecologie: 3, mobilite: 1 },
+    // Q6 — Logement
+    lgt_proprio:    { logement: 2, ecologie: 1 },
+    lgt_locataire:  { logement: 2 },
+    lgt_cherche:    { logement: 3 },
+    lgt_jeune:      { logement: 3, jeunesse: 2 },
+    lgt_senior:     { logement: 2, sante: 2 },
+    // Q7 — Associatif
+    asso_actif:     { democratie: 2, culture: 1 },
+    asso_participe: { culture: 2, democratie: 1 },
+    asso_sport:     { culture: 2, famille: 1 },
+    asso_peu:       { culture: 2, democratie: 1 },
+    asso_enfants:   { famille: 2, culture: 1 },
+    // Q8 — Gestion
+    gestion_opaque:   { democratie: 3 },
+    gestion_eloignee: { democratie: 3 },
+    gestion_lente:    { democratie: 2, securite: 1 },
+    gestion_fiscalite:{ democratie: 2, commerce: 1 },
+    gestion_ok:       { democratie: 1 },
+    // Q9 — Vision
+    vision_sure:      { securite: 3 },
+    vision_vivante:   { culture: 2, jeunesse: 2 },
+    vision_solidaire: { sante: 2, famille: 2 },
+    vision_verte:     { ecologie: 3, mobilite: 1 },
+    vision_efficace:  { democratie: 3 },
+    // Q10 — Implication
+    impl_concret:   { democratie: 2 },
+    impl_ecoute:    { democratie: 3 },
+    impl_quartier:  { securite: 1, democratie: 1 },
+    impl_deja:      { democratie: 2 },
+    impl_simple:    { democratie: 2 },
+  };
+
+  // Programme cards database
+  const pqProgramme = {
+    securite: [
+      { icon: '🚓', title: 'Police municipale renforcée (15 agents)', desc: 'Présence garantie le soir et le week-end. Des agents de proximité que vous connaissez.', tag: 'Sécurité' },
+      { icon: '📹', title: 'Vidéoprotection modernisée', desc: 'Extension du réseau, réparation des caméras défaillantes, caméras-piétons pour les agents.', tag: 'Sécurité' },
+      { icon: '🤝', title: 'Service de médiation et accompagnement victimes', desc: 'Équipe dédiée aux incivilités. Bureau d\'accueil pour les victimes coordonné avec la police nationale.', tag: 'Prévention' },
+      { icon: '🚨', title: 'Bornes d\'urgence dans les zones sensibles', desc: 'Reliées directement aux forces de l\'ordre. Présence policière étendue aux soirées et week-ends.', tag: 'Sécurité' },
+      { icon: '🏫', title: 'Sécurisation des abords d\'école', desc: 'Ralentisseurs, zones dépose-minute, traversées sécurisées. Vos enfants arrivent sereinement.', tag: 'Priorité' },
+    ],
+    famille: [
+      { icon: '🍼', title: 'Plus de places en crèche, horaires élargis', desc: 'Micro-crèches, accueil occasionnel, ouverture tôt le matin et tard le soir.', tag: 'Petite enfance' },
+      { icon: '📚', title: 'Étude surveillée jusqu\'à 18h', desc: 'Les devoirs faits à l\'école, encadrés. Votre soirée vous appartient.', tag: 'Quotidien' },
+      { icon: '🍽️', title: 'Cantine livrée directement dans les écoles', desc: 'Finis les trajets bus. Des espaces calmes et adaptés pour les repas.', tag: 'Confort' },
+      { icon: '🌞', title: 'Programme "Vacances Actives"', desc: 'Sport, culture et loisirs pour tous les enfants à chaque vacances scolaires.', tag: 'Égalité des chances' },
+      { icon: '💙', title: 'Soutien renforcé aux familles monoparentales', desc: 'Accès prioritaire aux structures, aide aux démarches, aide à la mobilité.', tag: 'Solidarité' },
+    ],
+    mobilite: [
+      { icon: '🚐', title: 'Navette électrique interquartiers gratuite', desc: 'Connexion régulière entre quartiers, centre-ville et gare. La mobilité sans voiture rendue réelle.', tag: 'Nouveau' },
+      { icon: '🚲', title: 'Pistes cyclables sécurisées', desc: 'Voies continues, séparées, lisibles. Vous roulez avec vos enfants sans frôler les voitures.', tag: 'Priorité' },
+      { icon: '🗺️', title: 'Plan de circulation du centre repensé', desc: 'Concertation avec les habitants pour fluidifier les flux et réduire les conflits.', tag: 'Concertation' },
+      { icon: '🔀', title: 'Sécurisation du rond-point de la Vaugine', desc: 'Un point noir depuis des années. Aménagement prioritaire : voies, signalétique, visibilité.', tag: 'Infrastructure' },
+      { icon: '🚆', title: 'Meilleures liaisons régionales et vers Paris', desc: 'Coordination avec les autorités compétentes pour améliorer les connexions ferroviaires.', tag: 'Ouverture' },
+    ],
+    sante: [
+      { icon: '🏥', title: 'Attirer des médecins et spécialistes à Vesoul', desc: 'Accompagnement à l\'installation, locaux disponibles, coordination avec l\'ARS et l\'hôpital.', tag: 'Santé' },
+      { icon: '☕', title: 'Café des familles — lien et solidarité', desc: 'Un lieu de rencontre pour briser l\'isolement et développer le parrainage familial.', tag: 'Lien social' },
+      { icon: '❤️', title: 'Objectif zéro senior isolé', desc: 'Réseau de voisinage, visites régulières, numéro dédié. Personne ne reste seul à Vesoul.', tag: 'Solidarité' },
+      { icon: '🎫', title: 'Guichet unique seniors — toutes démarches', desc: 'Un seul endroit, des interlocuteurs dédiés. Plus de labyrinthe administratif.', tag: 'Services' },
+    ],
+    logement: [
+      { icon: '🔑', title: 'Logements vacants remis sur le marché', desc: 'Identification des logements vides et accompagnement pour leur remise en location.', tag: 'Logement' },
+      { icon: '🏠', title: 'T1/T2 pour jeunes et personnes seules', desc: 'Création de petits logements en centre-ville pour les jeunes actifs et étudiants.', tag: 'Logement' },
+      { icon: '🔧', title: 'Plan de rénovation énergétique accompagné', desc: 'Aide aux propriétaires et locataires pour isoler, réduire les factures, améliorer le confort.', tag: 'Économies' },
+      { icon: '🧓', title: 'Logements adaptés au vieillissement', desc: 'Accompagnement pour rester chez soi le plus longtemps possible dans de bonnes conditions.', tag: 'Autonomie' },
+    ],
+    commerce: [
+      { icon: '🏪', title: 'Guichet unique pour commerçants et artisans', desc: 'Un seul interlocuteur municipal pour toutes vos démarches d\'installation et de gestion.', tag: 'Commerce' },
+      { icon: '🎪', title: 'Animations et événements toute l\'année', desc: 'Un agenda co-construit avec les commerçants. Du monde dans les rues, des clients dans votre boutique.', tag: 'Attractivité' },
+      { icon: '💳', title: 'Carte avantages locaux', desc: 'Vos clients ont une raison concrète de vous choisir plutôt que la périphérie.', tag: 'Économies' },
+      { icon: '📉', title: 'Fiscalité stabilisée et transparente', desc: 'Engagement de stabilité fiscale. Vous planifiez sans mauvaise surprise.', tag: 'Gestion' },
+    ],
+    jeunesse: [
+      { icon: '💻', title: 'Campus 3.0 — numérique et métiers d\'avenir', desc: 'Espaces de formation, coworking, accès numérique en centre-ville pour les jeunes.', tag: 'Avenir' },
+      { icon: '🚀', title: 'Soutien à l\'entrepreneuriat jeune', desc: 'Accompagnement, locaux, lien avec la mission locale. Créer à Vesoul devient possible.', tag: 'Entrepreneuriat' },
+      { icon: '🏠', title: 'Aides à l\'installation des jeunes', desc: 'Des dispositifs pour faciliter le premier logement. Rester à Vesoul est un vrai choix.', tag: 'Installation' },
+      { icon: '🎟️', title: 'Pass Sport & Culture municipal', desc: 'Accès à tarif réduit aux équipements sportifs et culturels. Profiter de Vesoul ne coûte pas cher.', tag: 'Accès pour tous' },
+    ],
+    culture: [
+      { icon: '🎵', title: 'Mini salle de concert et espace d\'expression', desc: 'Un endroit où les artistes locaux peuvent jouer. La scène locale qui reprend vie.', tag: 'Culture' },
+      { icon: '🗓️', title: 'Agenda 52 semaines, co-construit avec les assos', desc: 'Vesoul festive, sportive, culturelle toute l\'année — pas seulement l\'été.', tag: 'Vie locale' },
+      { icon: '🎨', title: 'Fresques, sculptures et parcours culturels', desc: 'Intégration d\'œuvres dans l\'espace public. Vesoul porte son histoire fièrement.', tag: 'Patrimoine' },
+      { icon: '🏃', title: 'Zones fitness et parcours santé de proximité', desc: 'Aires sportives dans chaque quartier. Bouger ensemble, accessible à tous les âges.', tag: 'Sport pour tous' },
+    ],
+    ecologie: [
+      { icon: '☀️', title: 'Panneaux solaires sur bâtiments municipaux', desc: 'Énergie renouvelable produite localement. Des économies reversées à la commune.', tag: 'Énergie' },
+      { icon: '🌳', title: 'Végétalisation urbaine et îlots de fraîcheur', desc: 'Plantation massive, cours d\'école végétalisées, zones ombragées. La ville qui respire.', tag: 'Environnement' },
+      { icon: '💧', title: 'Points d\'eau et préservation de la biodiversité', desc: 'Fontaines pour les animaux, corridors verts protégés, développement de la biodiversité urbaine.', tag: 'Nature' },
+      { icon: '🔧', title: 'Rénovation énergétique des bâtiments communaux', desc: 'Isolation, modernisation, LED. Moins de dépenses publiques, plus d\'économies pour les projets.', tag: 'Efficacité' },
+    ],
+    democratie: [
+      { icon: '📺', title: 'Conseils municipaux diffusés en direct', desc: 'Retransmission en ligne de tous les conseils, suivis de séances questions-réponses.', tag: 'Transparence' },
+      { icon: '🗣️', title: 'Plateforme citoyenne et cafés de quartier', desc: 'Propositions en ligne, mise à l\'ordre du jour automatique, réunions trimestrielles par quartier.', tag: 'Participation' },
+      { icon: '🗳️', title: 'Référendum local pour les grands projets', desc: 'Sur les décisions structurantes, les habitants sont consultés. Un mandat n\'est pas un blanc-seing.', tag: 'Démocratie' },
+      { icon: '📊', title: 'Budget lisible, stabilité fiscale, désendettement', desc: 'Rapports financiers réguliers, en langage clair. Chaque euro dépensé, expliqué.', tag: 'Gestion' },
+    ],
+  };
+
+  let pqScores = {};
+  let pqCurrentQ = 0;
+  const pqTotalQ = 10;
+
+  function resetPqScores() {
+    pqScores = { securite:0, famille:0, mobilite:0, sante:0, logement:0, commerce:0, jeunesse:0, culture:0, ecologie:0, democratie:0 };
+  }
+
+  function openProgrammeQuiz() {
+    resetPqScores();
+    pqCurrentQ = 0;
+    // Reset steps
+    document.querySelectorAll('.pq-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('pq-result').classList.remove('active');
+    document.getElementById('pq-q1').classList.add('active');
+    document.querySelectorAll('.pq-opt').forEach(o => o.classList.remove('selected'));
+    updatePqProgress(1);
+    document.getElementById('pq-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProgrammeQuiz() {
+    document.getElementById('pq-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function pqOverlayClick(e) {
+    if (e.target === document.getElementById('pq-modal')) closeProgrammeQuiz();
+  }
+
+  function updatePqProgress(q) {
+    const pct = Math.round(((q - 1) / pqTotalQ) * 100);
+    document.getElementById('pq-fill').style.width = Math.max(5, pct) + '%';
+    document.getElementById('pq-progress-label').textContent = q <= pqTotalQ ? 'Question ' + q + ' / ' + pqTotalQ : 'Résultats';
+  }
+
+  function pqAnswer(qNum, answerKey, btn) {
+    // Visual feedback
+    const step = document.getElementById('pq-q' + qNum);
+    step.querySelectorAll('.pq-opt').forEach(o => o.classList.remove('selected'));
+    btn.classList.add('selected');
+
+    // Apply weights
+    const weights = pqWeights[answerKey] || {};
+    for (const [theme, pts] of Object.entries(weights)) {
+      if (pqScores[theme] !== undefined) pqScores[theme] += pts;
+    }
+
+    pqCurrentQ = qNum;
+
+    // Short delay for UX feedback, then advance
+    setTimeout(() => {
+      if (qNum < pqTotalQ) {
+        step.classList.remove('active');
+        const nextStep = document.getElementById('pq-q' + (qNum + 1));
+        if (nextStep) {
+          nextStep.classList.add('active');
+          updatePqProgress(qNum + 1);
+        }
+      } else {
+        // Show results
+        step.classList.remove('active');
+        updatePqProgress(pqTotalQ + 1);
+        showPqResult();
+      }
+    }, 280);
+  }
+
+  function showPqResult() {
+    // Sort themes by score
+    const sorted = Object.entries(pqScores)
+      .sort((a, b) => b[1] - a[1])
+      .filter(([, v]) => v > 0);
+
+    // Top 3 themes
+    const top3 = sorted.slice(0, 3).map(([k]) => k);
+    const top1 = top3[0] || 'securite';
+
+    // Profile label & icon
+    const themeLabels = {
+      securite:   { icon: '🛡️', label: 'Sécurité & Tranquillité' },
+      famille:    { icon: '👨‍👩‍👧', label: 'Familles & Enfance' },
+      mobilite:   { icon: '🚴', label: 'Mobilité & Déplacements' },
+      sante:      { icon: '❤️', label: 'Santé & Solidarité' },
+      logement:   { icon: '🏠', label: 'Logement & Cadre de vie' },
+      commerce:   { icon: '🛍️', label: 'Commerce & Économie locale' },
+      jeunesse:   { icon: '🚀', label: 'Jeunesse & Avenir' },
+      culture:    { icon: '🎭', label: 'Culture, Sport & Associations' },
+      ecologie:   { icon: '🌿', label: 'Écologie & Environnement' },
+      democratie: { icon: '🗳️', label: 'Démocratie & Transparence' },
+    };
+
+    const topLabel = themeLabels[top1];
+    document.getElementById('pq-res-icon').textContent = topLabel.icon;
+    document.getElementById('pq-res-title').textContent = 'Vos priorités : ' + top3.map(t => themeLabels[t].label).join(' · ');
+    document.getElementById('pq-res-sub').textContent = 'Basé sur vos 10 réponses — ' + sorted.length + ' thèmes identifiés';
+
+    // Intro text
+    const intros = {
+      securite:   'La sécurité est votre priorité. Vous voulez pouvoir circuler librement, sans appréhension, à toute heure. Ce programme porte un engagement fort sur la présence policière, la médiation et l\'éclairage.',
+      famille:    'La famille est au cœur de vos préoccupations. Vous voulez une ville qui accompagne les parents, protège les enfants et soutient ceux qui élèvent seuls. Ce programme vous répond concrètement.',
+      mobilite:   'Vous souhaitez une ville où l\'on peut se déplacer autrement qu\'en voiture. Navettes, pistes cyclables, plan de circulation repensé — ce programme rend la mobilité douce enfin réelle à Vesoul.',
+      sante:      'L\'accès à la santé et la lutte contre l\'isolement sont vos priorités. Ce programme s\'engage à attirer des médecins, créer du lien et ne laisser personne seul face à ses difficultés.',
+      logement:   'Le logement est une préoccupation centrale pour vous. Ce programme agit sur tous les fronts : logements vacants, offre adaptée aux jeunes et aux seniors, accompagnement à la rénovation.',
+      commerce:   'Le dynamisme économique local vous importe. Vous voulez un centre-ville vivant, des commerçants soutenus, une fiscalité juste. Ce programme place l\'économie locale au premier rang.',
+      jeunesse:   'L\'avenir des jeunes Vésuliens est votre priorité. Ce programme crée les conditions pour qu\'ils restent, s\'installent, créent et s\'épanouissent ici plutôt que de partir.',
+      culture:    'Vous aspirez à une ville vivante, animée, où la culture et le sport sont accessibles à tous. Ce programme construit un agenda 52 semaines avec les associations et les habitants.',
+      ecologie:   'L\'environnement et le cadre de vie sont essentiels pour vous. Ce programme agit concrètement : végétalisation, énergie renouvelable, mobilité douce et préservation de la biodiversité.',
+      democratie: 'Vous attendez une mairie transparente, proche, qui rend des comptes. Ce programme s\'engage sur la démocratie participative, les budgets lisibles et un élu joignable dans chaque quartier.',
+    };
+    document.getElementById('pq-res-intro').textContent = intros[top1] || intros.securite;
+
+    // Build cards: 2-3 from each top theme, max 7 total
+    let cards = [];
+    for (const theme of top3) {
+      const pool = pqProgramme[theme] || [];
+      cards.push(...pool.slice(0, theme === top1 ? 3 : 2));
+    }
+    // Deduplicate by title and limit to 8
+    const seen = new Set();
+    cards = cards.filter(c => { if (seen.has(c.title)) return false; seen.add(c.title); return true; }).slice(0, 8);
+
+    const cardsHtml = cards.map(c => `
+      <div class="pq-card">
+        <div class="pq-card-icon">${c.icon}</div>
+        <div class="pq-card-body">
+          <div class="pq-card-title">${c.title}</div>
+          <div class="pq-card-desc">${c.desc}</div>
+          <span class="pq-card-tag">${c.tag}</span>
+        </div>
+      </div>
+    `).join('');
+
+    document.getElementById('pq-cards').innerHTML = cardsHtml;
+    document.getElementById('pq-result').classList.add('active');
+
+    // Scroll to top of modal
+    document.querySelector('.pq-box').scrollTop = 0;
+  }
+
+  function pqRestart() {
+    resetPqScores();
+    pqCurrentQ = 0;
+    document.querySelectorAll('.pq-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('pq-result').classList.remove('active');
+    document.querySelectorAll('.pq-opt').forEach(o => o.classList.remove('selected'));
+    document.getElementById('pq-q1').classList.add('active');
+    updatePqProgress(1);
+    document.querySelector('.pq-box').scrollTop = 0;
+  }
+
+  // Close on Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && document.getElementById('pq-modal').classList.contains('open')) {
+      closeProgrammeQuiz();
+    }
+  });
+
+</script>
+
+<!-- ═══════════════════════════════════════════════════════
+     MODAL QUIZ — MON PROGRAMME PERSONNALISÉ
+═══════════════════════════════════════════════════════ -->
+<div class="pq-overlay" id="pq-modal" onclick="pqOverlayClick(event)">
+  <div class="pq-box">
+
+    <!-- HEADER -->
+    <div class="pq-header">
+      <div class="pq-header-inner">
+        <div class="pq-logo">🗳️ Ensemble pour Vesoul</div>
+        <button class="pq-close" onclick="closeProgrammeQuiz()" aria-label="Fermer">✕</button>
+      </div>
+      <div class="pq-progress-bar"><div class="pq-progress-fill" id="pq-fill"></div></div>
+      <div class="pq-progress-label" id="pq-progress-label">Question 1 / 10</div>
+    </div>
+
+    <!-- QUESTIONS -->
+    <div class="pq-body" id="pq-body">
+
+      <!-- Q1 -->
+      <div class="pq-step active" id="pq-q1">
+        <div class="pq-qnum">01</div>
+        <div class="pq-question">Quel est votre quotidien principal à Vesoul ?</div>
+        <div class="pq-options">
+          <button class="pq-opt" onclick="pqAnswer(1,'parent',this)">👨‍👩‍👧 Je gère ma famille, mes enfants, leurs activités</button>
+          <button class="pq-opt" onclick="pqAnswer(1,'retraite',this)">🧓 Je suis retraité·e, j'ai du temps mais pas toujours la mobilité</button>
+          <button class="pq-opt" onclick="pqAnswer(1,'salarie',this)">💼 Je travaille, je jongle entre boulot et vie perso</button>
+          <button class="pq-opt" onclick="pqAnswer(1,'jeune',this)">🚀 Je suis étudiant·e ou jeune actif, je construis ma vie</button>
+          <button class="pq-opt" onclick="pqAnswer(1,'commercant',this)">🛍️ Je gère mon commerce ou mon activité en indépendant</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="pq-step" id="pq-q2">
+        <div class="pq-qnum">02</div>
+        <div class="pq-question">En matière de sécurité, qu'est-ce qui vous préoccupe le plus ?</div>
+        <div class="pq-options">
+          <button class="pq-opt" onclick="pqAnswer(2,'securite_ecoles',this)">🏫 Les abords des écoles et la sécurité des enfants</button>
+          <button class="pq-opt" onclick="pqAnswer(2,'securite_soir',this)">🌙 L'insécurité le soir dans les rues et quartiers</button>
+          <button class="pq-opt" onclick="pqAnswer(2,'securite_centre',this)">🏪 Les incivilités et la dégradation du centre-ville</button>
+          <button class="pq-opt" onclick="pqAnswer(2,'securite_route',this)">🚗 La sécurité routière, les trottoirs, le stationnement sauvage</button>
+          <button class="pq-opt" onclick="pqAnswer(2,'securite_peu',this)">😌 Je me sens globalement en sécurité à Vesoul</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="pq-step" id="pq-q3">
+        <div class="pq-qnum">03</div>
+        <div class="pq-question">Comment vous déplacez-vous principalement à Vesoul ?</div>
+        <div class="pq-options">
+          <button class="pq-opt" onclick="pqAnswer(3,'mobilite_voiture',this)">🚗 En voiture — c'est indispensable pour moi</button>
+          <button class="pq-opt" onclick="pqAnswer(3,'mobilite_pied',this)">🚶 À pied — j'habite près du centre</button>
+          <button class="pq-opt" onclick="pqAnswer(3,'mobilite_velo',this)">🚲 À vélo ou en trottinette, quand c'est possible</button>
+          <button class="pq-opt" onclick="pqAnswer(3,'mobilite_navette',this)">🚐 J'aimerais ne plus dépendre de la voiture</button>
+          <button class="pq-opt" onclick="pqAnswer(3,'mobilite_rien',this)">😓 Je ne peux plus me déplacer facilement, c'est un vrai problème</button>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="pq-step" id="pq-q4">
+        <div class="pq-qnum">04</div>
+        <div class="pq-question">Quel est votre rapport au centre-ville de Vesoul ?</div>
+        <div class="pq-options">
+          <button class="pq-opt" onclick="pqAnswer(4,'cv_souvent',this)">☕ J'y vais souvent, j'aime son ambiance</button>
+          <button class="pq-opt" onclick="pqAnswer(4,'cv_peu',this)">😕 Je l'évite — trop peu animé, trop peu sûr</button>
+          <button class="pq-opt" onclick="pqAnswer(4,'cv_commercant',this)">🏪 Je travaille en centre-ville, son dynamisme me touche directement</button>
+          <button class="pq-opt" onclick="pqAnswer(4,'cv_loin',this)">🏘️ J'habite en périphérie, le centre est loin de mon quotidien</button>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="pq-step" id="pq-q5">
+        <div class="pq-qnum">05</div>
+        <div class="pq-question">Qu'est-ce qui vous manque le plus à Vesoul aujourd'hui ?</div>
+        <div class="pq-options">
+          <button class="pq-opt" onclick="pqAnswer(5,'manque_sante',this)">🏥 Des médecins et spécialistes accessibles rapidement</button>
+          <button class="pq-opt" onclick="pqAnswer(5,'manque_culture',this)">🎭 Des événements culturels, une vie nocturne, des animations</button>
+          <button class="pq-opt" onclick="pqAnswer(5,'manque_enfants',this)">👶 Des structures pour les enfants, des activités, des crèches</button>
+          <button class="pq-opt" onclick="pqAnswer(5,'manque_emploi',this)">💼 Des opportunités professionnelles, un soutien aux entrepreneurs</button>
+          <button class="pq-opt" onclick="pqAnswer(5,'manque_cadre',this)">🌳 Un cadre de vie plus propre, plus vert, plus agréable</button>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="pq-step" id="pq-q6">
+        <div class="pq-qnum">06</div>
+        <div class="pq-question">Concernant votre logement, quelle est votre situation ?</div>
+        <div class="pq-options">
+          <button class="pq-opt" onclick="pqAnswer(6,'lgt_proprio',this)">🏠 Je suis propriétaire — la fiscalité et la rénovation m'importent</button>
+          <button class="pq-opt" onclick="pqAnswer(6,'lgt_locataire',this)">🔑 Je suis locataire — j'aimerais plus d'offre de qualité</button>
+          <button class="pq-opt" onclick="pqAnswer(6,'lgt_cherche',this)">🔍 Je cherche un logement adapté à Vesoul</button>
+          <button class="pq-opt" onclick="pqAnswer(6,'lgt_jeune',this)">🚀 Je suis jeune, je voudrais m'installer mais c'est compliqué</button>
+          <button class="pq-opt" onclick="pqAnswer(6,'lgt_senior',this)">🧓 Je voudrais rester chez moi le plus longtemps possible</button>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="pq-step" id="pq-q7">
+        <div class="pq-qnum">07</div>
+        <div class="pq-question">La vie associative et culturelle à Vesoul, c'est pour vous…</div>
+        <div class="pq-options">
+          <button class="pq-opt" onclick="pqAnswer(7,'asso_actif',this)">🌐 Je suis membre d'une association ou bénévole actif</button>
+          <button class="pq-opt" onclick="pqAnswer(7,'asso_participe',this)">🎟️ Je participe aux événements quand il y en a</button>
+          <button class="pq-opt" onclick="pqAnswer(7,'asso_sport',this)">⚽ Je pratique un sport en club local</button>
+          <button class="pq-opt" onclick="pqAnswer(7,'asso_peu',this)">😔 Peu présent — manque d'offre ou d'information</button>
+          <button class="pq-opt" onclick="pqAnswer(7,'asso_enfants',this)">👧 Mes enfants font des activités, je suis impliqué via eux</button>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="pq-step" id="pq-q8">
+        <div class="pq-qnum">08</div>
+        <div class="pq-question">Comment jugez-vous la gestion municipale actuelle ?</div>
+        <div class="pq-options">
+          <button class="pq-opt" onclick="pqAnswer(8,'gestion_opaque',this)">🙈 Peu transparente — je ne sais pas comment l'argent est dépensé</button>
+          <button class="pq-opt" onclick="pqAnswer(8,'gestion_eloignee',this)">📵 Éloignée des citoyens — on n'est pas écoutés</button>
+          <button class="pq-opt" onclick="pqAnswer(8,'gestion_lente',this)">🐌 Trop lente — les problèmes traînent depuis des années</button>
+          <button class="pq-opt" onclick="pqAnswer(8,'gestion_fiscalite',this)">💸 La fiscalité est trop lourde pour les services rendus</button>
+          <button class="pq-opt" onclick="pqAnswer(8,'gestion_ok',this)">👍 Globalement correcte, mais améliorable</button>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="pq-step" id="pq-q9">
+        <div class="pq-qnum">09</div>
+        <div class="pq-question">Dans 6 ans, quelle Vesoul voulez-vous pour vous et vos proches ?</div>
+        <div class="pq-options">
+          <button class="pq-opt" onclick="pqAnswer(9,'vision_sure',this)">🛡️ Une ville plus sûre où tout le monde peut sortir sereinement</button>
+          <button class="pq-opt" onclick="pqAnswer(9,'vision_vivante',this)">✨ Une ville vivante, animée, qui retient ses jeunes</button>
+          <button class="pq-opt" onclick="pqAnswer(9,'vision_solidaire',this)">🤝 Une ville solidaire où personne n'est laissé de côté</button>
+          <button class="pq-opt" onclick="pqAnswer(9,'vision_verte',this)">🌿 Une ville plus verte, durable, agréable à vivre</button>
+          <button class="pq-opt" onclick="pqAnswer(9,'vision_efficace',this)">⚡ Une mairie efficace, transparente et proche des habitants</button>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="pq-step" id="pq-q10">
+        <div class="pq-qnum">10</div>
+        <div class="pq-question">Dernière question : qu'est-ce qui pourrait vous convaincre de vous impliquer dans la vie locale ?</div>
+        <div class="pq-options">
+          <button class="pq-opt" onclick="pqAnswer(10,'impl_concret',this)">📋 Des résultats concrets, des engagements tenus</button>
+          <button class="pq-opt" onclick="pqAnswer(10,'impl_ecoute',this)">👂 Être vraiment écouté·e et voir mes idées prises en compte</button>
+          <button class="pq-opt" onclick="pqAnswer(10,'impl_quartier',this)">🏘️ Des actions visibles dans mon quartier</button>
+          <button class="pq-opt" onclick="pqAnswer(10,'impl_deja',this)">✅ Je m'implique déjà, je veux juste une équipe à la hauteur</button>
+          <button class="pq-opt" onclick="pqAnswer(10,'impl_simple',this)">💬 Des démarches simples pour participer sans y passer des heures</button>
+        </div>
+      </div>
+
+      <!-- RÉSULTAT -->
+      <div class="pq-result" id="pq-result">
+        <div class="pq-result-header">
+          <div class="pq-result-icon" id="pq-res-icon">🎯</div>
+          <div class="pq-result-title" id="pq-res-title">Votre programme sur mesure</div>
+          <div class="pq-result-sub" id="pq-res-sub">Basé sur vos réponses</div>
+        </div>
+        <div class="pq-result-intro" id="pq-res-intro"></div>
+        <div class="pq-measures-title">📌 Les mesures qui vous correspondent</div>
+        <div class="pq-cards" id="pq-cards"></div>
+        <div class="pq-result-footer">
+          <a href="#programme" class="pq-footer-btn pq-btn-blue" onclick="closeProgrammeQuiz()">📖 Voir le programme complet</a>
+          <a href="#carte" class="pq-footer-btn pq-btn-outline" onclick="closeProgrammeQuiz()">📍 Projets dans mon quartier</a>
+          <button class="pq-footer-btn pq-btn-gold" onclick="pqRestart()">🔄 Recommencer</button>
+        </div>
+      </div>
+
+    </div><!-- /pq-body -->
+  </div><!-- /pq-box -->
+</div><!-- /pq-overlay -->
+</body>
+</html>
